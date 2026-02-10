@@ -1,0 +1,16 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+
+# macOS
+.DS_Store
+
+# Optional: Uncomment to exclude PDF from version control
+# *.pdf
