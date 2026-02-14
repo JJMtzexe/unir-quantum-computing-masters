@@ -1,0 +1,1 @@
+latexmk -pdf -interaction=nonstopmode -output-directory=fundamentos_de_mecanica_cuantica fundamentos_de_mecanica_cuantica/ccff_actividad.tex

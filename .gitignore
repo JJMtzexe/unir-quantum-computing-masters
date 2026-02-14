@@ -8,6 +8,8 @@
 *.out
 *.synctex.gz
 *.toc
+*.pdf
+*.dvi
 
 # macOS
 .DS_Store
