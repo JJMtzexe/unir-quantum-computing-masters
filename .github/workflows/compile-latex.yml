@@ -1,0 +1,37 @@
+name: Build LaTeX document
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [published]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the short commit hash
+        id: get_short_sha
+        run: echo "SHORT_SHA=$(git rev-parse --short $GITHUB_SHA)" >> $GITHUB_OUTPUT
+      - name: Set up Git repository
+        uses: actions/checkout@v6
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: |
+            fundamentos_de_mecanica_cuantica/ccff_actividad.tex
+      - name: Upload PDF files
+        uses: actions/upload-artifact@v6
+        if: github.event_name != 'release'
+        with:
+          name: compiled-docs-${{ steps.get_short_sha.outputs.SHORT_SHA }}
+          path: |
+            ccff_actividad.pdf
+      - name: Upload to Release as an asset
+        uses: softprops/action-gh-release@v1
+        if: github.event_name == 'release' && github.event.action == 'published'
+        with:
+          tag_name: ${{ steps.get_short_sha.outputs.SHORT_SHA }}
+          files: |
+            ccff_actividad.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The default GITHUB_TOKEN has the necessary permissions
