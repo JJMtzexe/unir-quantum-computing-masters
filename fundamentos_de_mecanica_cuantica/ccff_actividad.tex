@@ -105,15 +105,154 @@ A continuación, se expondrá el contexto histórico y el razonamiento que diero
 
 \subsection{¿Qué pendientes dejaron los modelos de Bohr-Sommerfeld?}
 
+El modelo de \cite{rutherford1911} estableció que los electrones orbitan alrededor de un núcleo de carga positiva, pero según la electrodinámica clásica, un electrón en movimiento orbital debería emitir radiación de forma continua, perder energía y caer en espiral hacia el núcleo. \textbf{Esto, evidentemente, no ocurre.}
+
+Bohr resolvió esta contradicción postulando que existen estados ``estacionarios'' en los que el electrón no radia, y que solo están permitidas aquellas órbitas cuyo momento angular sea un múltiplo entero de $\hbar$~\cite{bohr1913}. Con estos postulados obtuvo los niveles de energía del hidrógeno ($E_n = -13.6/n^2$ eV) y explicó su espectro de emisión con notable precisión.
+
+Posteriormente, \cite{sommerfeld1916} extendió el modelo permitiendo órbitas elípticas e introduciendo los números cuánticos azimutal $\ell$ y magnético $m$ mediante reglas de cuantización más generales:
+
+\begin{equation}
+E_n = -\frac{Z^2 e^4 m_e}{32\pi^2 \varepsilon_0^2 \hbar^2} \cdot \frac{1}{n^2}, \quad L = \ell\hbar, \quad L_z = m\hbar
+\label{eq:sommerfeld}
+\end{equation}
+
+donde $\ell$ describe la forma de la órbita (con valores $0, 1, \ldots, n-1$) y $m$ su orientación espacial (con valores $-\ell, \ldots, +\ell$). Sin embargo, la energía $E_n$ sigue dependiendo exclusivamente de $n$: los números $\ell$ y $m$ no aparecen en la expresión de la energía. Esto significa que órbitas con formas y orientaciones distintas tienen la misma energía, algo que no coincidía con las observaciones experimentales más precisas.
+
+Además, al igual que en el modelo de Bohr, los valores permitidos de $\ell$ y $m$ se imponen mediante reglas de cuantización sin una justificación teórica de fondo. Son restricciones que funcionan, pero que nadie podía derivar desde una teoría más fundamental.
+
+A pesar de los avances de ambos modelos, estos compartían limitaciones fundamentales:
+
+\begin{itemize}
+\item Los postulados de cuantización eran una imposición sobre la física clásica, no una consecuencia teórica.
+\item El modelo fallaba al describir átomos con más de un electrón.
+\item No se explicaba el mecanismo por el cual un electrón transiciona entre niveles de energía.
+\item El electrón se seguía tratando como una partícula puntual en una trayectoria definida.
+\end{itemize}
+
+Uno de los cuestionamientos más notables fue el del propio Rutherford, quien en una carta dirigida a Bohr señaló: ``¿cómo decide un electrón a qué frecuencia va a vibrar cuando pasa de un estado estacionario a otro? Pareciera que se debe asumir que el electrón sabe de antemano dónde se va a detener''~\cite{rutherford1913carta}. \textbf{Hacía falta, por tanto, una teoría completamente nueva.}
+
 \subsection{De Broglie y su razonamiento de la dualidad onda-partícula}
+
+En 1905, Albert Einstein demostró que la luz—hasta entonces considerada exclusivamente como una onda electromagnética—también se comportaba como partícula (el fotón $\gamma$ ), cuya energía viene dada por $E = h\nu$~\cite{einsteina1905_photoelectric}. En 1924, Louis de Broglie reflejó este razonamiento en su tesis doctoral: si las ondas pueden comportarse como partículas, ¿pueden las partículas comportarse como ondas?~\cite{debroglie1924}
+
+De Broglie propuso que toda partícula con momento $p$ tiene asociada una longitud de onda:
+
+\begin{equation}
+\lambda = \frac{h}{p} = \frac{h}{m_e v}
+\label{eq:debroglie}
+\end{equation}
+
+% SUGERENCIA DE IMAGEN: diagrama de ondas estacionarias envueltas 
+% alrededor de órbitas circulares para n=1,2,3 (similar a la imagen 
+% de physics.info "nested standing waves wrapped around circular paths")
+
+Esta hipótesis tuvo una consecuencia inmediata sobre el modelo de Bohr. Si el electrón es una onda, su órbita alrededor del núcleo debe contener un número entero de longitudes de onda para que la onda sea estacionaria---es decir, para que al completar una vuelta, la onda ``cierre'' sobre sí misma sin destruirse por interferencia destructiva. Esta condición se expresa como:
+
+\begin{equation}
+2\pi r = n\lambda = n\frac{h}{m_e v}
+\label{eq:onda_estacionaria}
+\end{equation}
+
+Al despejar, se obtiene directamente:
+
+\begin{equation}
+m_e v r = n\hbar
+\label{eq:bohr_desde_debroglie}
+\end{equation}
+
+que es precisamente la condición de cuantización del momento angular que Bohr había postulado sin justificación once años antes. Lo que en el modelo de Bohr era un postulado \textit{ad hoc}, en el razonamiento de de Broglie se convertía en una consecuencia natural de la naturaleza ondulatoria del electrón.
+
+Sin embargo, este razonamiento aún tenía una limitación fundamental: la onda del electrón se trataba como unidimensional, envuelta alrededor de una trayectoria circular. 
+
+
+
+Un electrón real existe en tres dimensiones, y su comportamiento ondulatorio debería describirse mediante una ecuación de ondas tridimensional, análoga a las ecuaciones de Maxwell para la luz. Como señala el material del curso, ``Schrödinger aprovecha la idea de De Broglie de asociar una onda a cada partícula, y desarrolla una ecuación de ondas que deben cumplir todas las partículas que pudiesen representarse mediante una función de onda''~\cite{tema2}.
 
 \subsection{La ecuación de onda de Schrödinger}
 
-\subsection{Solución para el hidrógeno: los números cuánticos}
+De forma paralela al trabajo de Werner Heisenberg, quien en 1925 propuso abandonar las imágenes clásicas y trabajar directamente con matrices de magnitudes observables~\cite{heisenberg1925}, Erwin Schrödinger tomó un camino distinto: partiendo de la hipótesis de de Broglie, desarrolló una ecuación de ondas que toda partícula debía satisfacer~\cite{schrodinger1926}. El propio Schrödinger demostró un año más tarde que ambos enfoques---la mecánica matricial y la mecánica ondulatoria---eran matemáticamente equivalentes~\cite{tema2}. Como ejemplo, el momento angular en ambas representaciones se expresa como:
 
-\subsection{Orbitales, nubes de probabilidad y el principio de exclusión}
+\begin{equation}
+\text{Heisenberg: } L_z = Q_x P_y - Q_y P_x
+\label{eq:heisenberg_lz}
+\end{equation}
+
+\begin{equation}
+\text{Schrödinger: } L_z = -i\hbar\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right)
+\label{eq:schrodinger_lz}
+\end{equation}
+
+La ecuación de Schrödinger en su forma completa, dependiente del tiempo, es:
+
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^2\Psi(\mathbf{r},t) + U(\mathbf{r})\Psi(\mathbf{r},t)
+\label{eq:schrodinger_td}
+\end{equation}
+
+% SUGERENCIA DE IMAGEN: representación visual de la función de onda Ψ 
+% como onda tridimensional alrededor del núcleo
+
+donde $\Psi(\mathbf{r},t)$ es la función de onda de la partícula, $m$ su masa, $U(\mathbf{r})$ el potencial al que está sometida, y $\nabla^2$ es el operador laplaciano. El lado izquierdo describe cómo evoluciona $\Psi$ en el tiempo. En el lado derecho, el primer término representa la energía cinética y el segundo la energía potencial.
+
+Cuando el potencial no depende del tiempo---como ocurre con la interacción coulombiana entre el electrón y el núcleo---la función de onda puede separarse en dos partes independientes:
+
+\begin{equation}
+\Psi(\mathbf{r},t) = \psi(\mathbf{r})\,\phi(t)
+\label{eq:separacion}
+\end{equation}
+
+La parte temporal tiene una solución directa, $\phi(t) = e^{-iEt/\hbar}$, que al calcular la densidad de probabilidad $|\Psi|^2 = |\psi|^2 \cdot |\phi|^2$ desaparece, ya que $|e^{-iEt/\hbar}|^2 = 1$. Esto significa que la distribución de probabilidad no cambia con el tiempo, lo cual justifica el nombre de ``estados estacionarios'' que Bohr había introducido en 1913~\cite{bohr1913}: ahora, en vez de ser un postulado, es una consecuencia matemática de la ecuación.
+
+\noindent La parte espacial satisface la ecuación de Schrödinger independiente del tiempo:
+
+\begin{equation}
+E\psi(\mathbf{r}) = -\frac{\hbar^2}{2m}\nabla^2\psi(\mathbf{r}) + U(\mathbf{r})\psi(\mathbf{r})
+\label{eq:schrodinger_ti}
+\end{equation}
+
+Esta es la ecuación que se resuelve para obtener los niveles de energía $E$ y las funciones de onda $\psi(\mathbf{r})$ permitidas. A diferencia de los modelos de Bohr y Sommerfeld, la cuantización no se impone: emerge naturalmente de las condiciones de contorno que debe satisfacer $\psi$ (ser finita, continua y normalizable). En el modelo de Schrödinger, las órbitas del electrón son sustituidas por \textit{orbitales} espaciales que representan la probabilidad de encontrar al electrón en un punto del espacio~\cite{tema2}.
+
+
+\subsection{Solución para el hidrógeno: números cuánticos, orbitales y nubes de probabilidad}
+
+Para el átomo de hidrógeno, el potencial en la ecuación~\ref{eq:schrodinger_ti} es el de Coulomb: $U(r) = -e^2/(4\pi\varepsilon_0 r)$. Este potencial depende únicamente de la distancia $r$ al núcleo, no de la dirección. Dado que el problema tiene simetría esférica, resulta natural resolverlo en coordenadas esféricas $(r, \theta, \phi)$, donde la función de onda puede separarse en una parte que depende de la distancia al núcleo y otra que depende de la orientación en el espacio:
+
+\begin{equation}
+\psi(r,\theta,\phi) = R_{n,\ell}(r) \cdot Y_\ell^{m}(\theta,\phi)
+\label{eq:separacion_esferica}
+\end{equation}
+
+Al exigir que esta función de onda sea físicamente válida---es decir, que no diverja al infinito, que sea continua y que la probabilidad total de encontrar al electrón en algún lugar sea igual a 1---la ecuación solo admite soluciones para ciertos valores discretos de tres parámetros. Estos parámetros son los números cuánticos, que emergen de la matemática sin necesidad de postularlos:
+
+\begin{itemize}
+\item $n = 1, 2, 3, \ldots$ (principal): determina la energía, $E_n = -13.6/n^2$ eV. Coincide con el resultado de Bohr, pero ahora como consecuencia de resolver la ecuación.
+\item $\ell = 0, 1, \ldots, n-1$ (azimutal): determina el momento angular orbital $L = \sqrt{\ell(\ell+1)}\,\hbar$. Define las subcapas $s, p, d, f$.
+\item $m_\ell = -\ell, \ldots, +\ell$ (magnético): determina la componente $z$ del momento angular, $L_z = m_\ell\hbar$. Explica el efecto Zeeman.
+\end{itemize}
+
+Los mismos números cuánticos que Bohr y Sommerfeld habían impuesto mediante reglas \textit{ad hoc} surgen aquí como consecuencias naturales de una sola ecuación diferencial.
+
+% SUGERENCIA DE IMAGEN: formas de los orbitales s, p, d
+
+La interpretación física de $\psi$ fue proporcionada por \cite{born1926}: $|\psi(\mathbf{r})|^2$ representa la densidad de probabilidad de encontrar al electrón en la posición $\mathbf{r}$. Las ``órbitas'' definidas del modelo de Bohr se transforman en nubes de probabilidad tridimensionales---los orbitales. Los orbitales $s$ ($\ell = 0$) son esféricos, los $p$ ($\ell = 1$) tienen forma bilobular, y los $d$ ($\ell = 2$) presentan formas cuadrilobulares.
+
+Para el estado fundamental del hidrógeno ($n=1$, $\ell=0$), la densidad de probabilidad radial alcanza su máximo en $r = a_0$ (el radio de Bohr). El resultado de Bohr se recupera, pero con una interpretación distinta: $a_0$ no es la distancia a la que está el electrón, sino la distancia donde es más probable encontrarlo.
+
+Un cuarto número cuántico, el espín ($m_s = \pm 1/2$), fue introducido por \cite{pauli1925} para explicar la estructura fina de los espectros. Pauli además enunció su principio de exclusión: dos electrones en un átomo no pueden compartir los mismos cuatro números cuánticos. Esto limita cada orbital a dos electrones con espines opuestos y determina la capacidad de cada capa electrónica: $2n^2$ electrones. El llenado progresivo de orbitales según este principio reproduce la estructura de la tabla periódica: los bloques $s$, $p$, $d$ y $f$ corresponden directamente a los valores de $\ell$.
 
 \subsection{¿Qué pendientes dejó el trabajo de Schrödinger?}
+
+A pesar de representar un salto cualitativo respecto a la teoría cuántica antigua, el modelo de Schrödinger presenta limitaciones que el propio material del curso identifica~\cite{tema2}:
+
+\begin{itemize}
+\item No incorpora el espín electrónico de forma natural. El espín fue introducido por Pauli como un postulado adicional~\cite{pauli1925}, pero no emerge de la ecuación de Schrödinger.
+\item No contempla efectos relativistas. Para electrones en átomos pesados, donde las velocidades son una fracción significativa de la velocidad de la luz, la ecuación pierde precisión ya que se da por hecho que la masa del electrón es constante.
+\item No explica el mecanismo por el cual un electrón salta de un nivel energético a otro.
+\end{itemize}
+
+Las dos primeras limitaciones fueron resueltas por Paul Dirac en 1928, quien formuló una ecuación que unifica la mecánica cuántica con la relatividad especial. De esta ecuación, el espín y la existencia de la antimateria emergen como consecuencias naturales de la teoría, de la misma forma en que los números cuánticos $n$, $\ell$ y $m$ emergen de la ecuación de Schrödinger.
+
+No obstante, la mecánica ondulatoria de Schrödinger estableció un cambio de paradigma que permanece vigente: los electrones no son partículas puntuales en órbitas definidas, sino distribuciones de probabilidad descritas por funciones de onda. Los números cuánticos no son postulados arbitrarios, sino consecuencias matemáticas de las condiciones de contorno. Y la estructura de la materia---desde el átomo de hidrógeno hasta la tabla periódica---emerge de una sola ecuación diferencial y un principio de exclusión. Estas ideas constituyen los cimientos sobre los que se construye la computación cuántica, tema que se abordará en asignaturas posteriores de este máster.
 
 \chapter{Conclusiones}
 
@@ -126,13 +265,27 @@ Las Conclusiones es otra parte muy IMPORTANTE de la memoria. Deben ser muy clara
 
 \bibitem[(Bohr, 1913)]{bohr1913} Bohr, N. (1913). On the constitution of atoms and molecules. \emph{Philosophical Magazine}, \emph{26}(151).
 
+\bibitem[(Born, 1926)]{born1926} Born, M. (1926). Zur Quantenmechanik der Stoßvorgänge [Sobre la mecánica cuántica de los procesos de colisión]. \emph{Zeitschrift für Physik}, \emph{37}(12).
+
+\bibitem[(de Broglie, 1924)]{debroglie1924} de Broglie, L. (1924). Recherches sur la théorie des quanta [Investigaciones sobre la teoría de los cuantos] (Tesis doctoral). Université de Paris.
+
 \bibitem[(Einstein, 1905)]{einsteina1905_photoelectric} Einstein, A. (1905). Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt [Sobre un punto de vista heurístico relativo a la producción y transformación de la luz]. \emph{Annalen der Physik}.
+
+\bibitem[(Gil-Merino, 2026)]{tema2} Gil-Merino, R. (2026). Tema 2: Teoría de la Radiación. \emph{Fundamentos de la Mecánica Cuántica}, Universidad Internacional de La Rioja (UNIR).
+
+\bibitem[(Heisenberg, 1925)]{heisenberg1925} Heisenberg, W. (1925). Über quantentheoretische Umdeutung kinematischer und mechanischer Beziehungen [Sobre la reinterpretación cuántico-teórica de relaciones cinemáticas y mecánicas]. \emph{Zeitschrift für Physik}, \emph{33}(1).
+
+\bibitem[(Pauli, 1925)]{pauli1925} Pauli, W. (1925). Über den Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der Komplexstruktur der Spektren [Sobre la conexión entre la completitud de los grupos de electrones en el átomo con la estructura compleja de los espectros]. \emph{Zeitschrift für Physik}, \emph{31}(1).
 
 \bibitem[(Planck, 1900)]{planckm1900_quantization_2} Planck, M. (1900). Zur Theorie des Gesetzes der Energieverteilung im Normalspectrum [Sobre la teoría de la ley de distribución de energía en el espectro normal]. \emph{Verhandlungen der Deutschen Physikalischen Gesellschaft}.
 
-\bibitem[Rutherford (1911)]{rutherford1911} Rutherford, E. (1911). The scattering of $\alpha$ and $\beta$ particles by matter and the structure of the atom. \emph{Philosophical Magazine}, \emph{21}(125).
+\bibitem[Rutherford(1911)]{rutherford1911} Rutherford, E. (1911). The scattering of $\alpha$ and $\beta$ particles by matter and the structure of the atom. \emph{Philosophical Magazine}, \emph{21}(125).
+
+\bibitem[(Rutherford, 1913)]{rutherford1913carta} Rutherford, E. (1913). Carta a N. Bohr. Reproducida en \emph{Physics of the Atom}. Publicada en \emph{Proceedings of the Physical Society}, \emph{78}(6).
 
 \bibitem[(Schrödinger, 1926)]{schrodinger1926} Schrödinger, E. (1926). Quantisierung als Eigenwertproblem [Cuantización como problema de valores propios]. \emph{Annalen der Physik}.
+
+\bibitem[Sommerfeld(1916)]{sommerfeld1916} Sommerfeld, A. (1916). Zur Quantentheorie der Spektrallinien [Sobre la teoría cuántica de las líneas espectrales]. \emph{Annalen der Physik}, \emph{356}(17).
 
 \end{thebibliography}
 %\bibliographystyle{plain} 
@@ -174,24 +327,3 @@ Donde:
 \end{itemize}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
