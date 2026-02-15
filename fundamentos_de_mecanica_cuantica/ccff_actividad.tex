@@ -1,6 +1,14 @@
 \documentclass[12pt,a4paper,spanish]{book}
-
-\usepackage{../shared/estilo_unir-1}
+\usepackage{fontspec}
+\setmainfont[
+    Path=shared/fonts/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+]{Calibri} 
+\usepackage{shared/estilo_unir-1}
 \usepackage{braket}
 \graphicspath{{fundamentos_de_mecanica_cuantica/images/}{images/}}
 
@@ -94,8 +102,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
 \section{El Fotón y la Estructura Nuclear: Einstein y Rutherford.}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\subsection{El Efecto Fotoeléctrico}
+Según la teoría clásica, la luz era una perturbación periódica contínua (u onda electromagnética) que se propagaba en el espacio. Esta teoría predecía, por ejemplo, que en el efecto fotoeléctrico la energía de los electrones emitidos debería depender de la intensidad de la luz.
+Sin embargo en el postulado del efecto fotoeléctrico ~\cite{einsteina1905_photoelectric} se demostró que la luz era de naturalez corpuscular (formada por cuantos) así como la existencia de los fotones. A través de la experimentación se demostró que los electrones saltaban de forma instantánea y solo si la luz superaba una frecuencia umbral específica, independientemente de cuán intensa fuera la luz.
+\begin{equation}
+    E_{\gamma} = h\nu = W_0 + E_{\text{cin}}
+\end{equation}
+Siendo que:
+\begin{itemize}
+\item $E_{\gamma}$ es la energía del fotón.
+\item $h\nu$ es la constante de Plank ($h$) multiplicada por la frecuencia de la radiación ($\nu$).
+\item $W_0$ es la energía de extracción.
+\item $E_{\text{cin}}$ es la energía cinética máxima de los electrones emitidos.
+\end{itemize}
+Con la restricción de que $W_0$ debe ser mayor a $h\nu$ para que se produzca la emisión de electrones.
 
+Es posible utilizar esta formulación para calcular la frecuencia umbral necesaria para que se produzca el efecto fotoeléctrico, una vez despejada la expresión:
+\begin{equation}
+    \nu = \frac{W_0 + E_{\text{cin}}}{h}
+\end{equation}
 \section{El Átomo de Bohr-Sommerfeld y los Espectros Atómicos.}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
