@@ -2,7 +2,7 @@
 
 \usepackage{shared/estilo_unir-1}
 \usepackage{braket}
-\graphicspath{{fundamentos_de_mecanica_cuantica/images/}{}}
+\graphicspath{{fundamentos_de_mecanica_cuantica/images/}{images/}}
 
 %---------------------------
 %título del trabajo y autor
@@ -149,7 +149,7 @@ En 1905, Albert Einstein demostró que la luz—hasta entonces considerada exclu
 \label{eq:debroglie}
 \end{equation}
 
-Esta hipótesis tuvo una consecuencia inmediata sobre el modelo de Bohr. Si el electrón es una onda, su órbita alrededor del núcleo debe contener un número entero de longitudes de onda para que la onda sea estacionaria---es decir, para que al completar una vuelta, la onda ``cierre'' sobre sí misma sin destruirse por interferencia destructiva. 
+Esta hipótesis tuvo una consecuencia inmediata sobre el modelo de Bohr. Si el electrón es una onda, su órbita alrededor del núcleo debe contener un número entero de longitudes de onda para que la onda sea estacionaria—es decir, para que al completar una vuelta, la onda ``cierre'' sobre sí misma sin destruirse por interferencia destructiva. 
 
 \begin{figure}[h]
     \centering
@@ -202,7 +202,7 @@ i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^
 
 donde $\Psi(\mathbf{r},t)$ es la función de onda de la partícula, $m$ su masa, $U(\mathbf{r})$ el potencial al que está sometida, y $\nabla^2$ es el operador laplaciano. El lado izquierdo describe cómo evoluciona $\Psi$ en el tiempo. En el lado derecho, el primer término representa la energía cinética y el segundo la energía potencial.
 
-Cuando el potencial no depende del tiempo---como ocurre con la interacción coulombiana entre el electrón y el núcleo---la función de onda puede separarse en dos partes independientes:
+Cuando el potencial no depende del tiempo—como ocurre con la interacción coulombiana entre el electrón y el núcleo—la función de onda puede separarse en dos partes independientes:
 
 \begin{equation}
 \Psi(\mathbf{r},t) = \psi(\mathbf{r})\,\phi(t)
@@ -249,7 +249,7 @@ Es decir, cada número cuántico aparece porque la función de onda, al tener qu
     \label{fig:orbitales}
 \end{figure}
 
-La interpretación física de $\psi$ fue proporcionada por \cite{born1926}: $|\psi(\mathbf{r})|^2$ representa la densidad de probabilidad de encontrar al electrón en la posición $\mathbf{r}$. Las ``órbitas'' definidas del modelo de Bohr se transforman en nubes de probabilidad tridimensionales---los orbitales. Los orbitales $s$ ($\ell = 0$) son esféricos, los $p$ ($\ell = 1$) tienen forma bilobular, y los $d$ ($\ell = 2$) presentan formas cuadrilobulares.
+La interpretación física de $\psi$ fue proporcionada por \cite{born1926}: $|\psi(\mathbf{r})|^2$ representa la densidad de probabilidad de encontrar al electrón en la posición $\mathbf{r}$. Las ``órbitas'' definidas del modelo de Bohr se transforman en nubes de probabilidad tridimensionales—los orbitales. Los orbitales $s$ ($\ell = 0$) son esféricos, los $p$ ($\ell = 1$) tienen forma bilobular, y los $d$ ($\ell = 2$) presentan formas cuadrilobulares.
 
 Un cuarto número cuántico, el espín ($m_s = \pm 1/2$), fue introducido por \cite{pauli1925} para explicar la estructura fina de los espectros. Pauli además enunció su principio de exclusión: dos electrones en un átomo no pueden compartir los mismos cuatro números cuánticos. Esto limita cada orbital a dos electrones con espines opuestos y determina la capacidad de cada capa electrónica: $2n^2$ electrones. El llenado progresivo de orbitales según este principio reproduce la estructura de la tabla periódica: los bloques $s$, $p$, $d$ y $f$ corresponden directamente a los valores de $\ell$.
 
@@ -265,7 +265,7 @@ A pesar de representar un salto importante respecto a la teoría cuántica antig
 
 Las dos primeras limitaciones fueron resueltas por Paul Dirac en 1928, quien formuló una ecuación que unifica la mecánica cuántica con la relatividad especial. De esta ecuación, el espín y la existencia de la antimateria emergen como consecuencias naturales de la teoría, de la misma forma en que los números cuánticos $n$, $\ell$ y $m$ emergen de la ecuación de Schrödinger.
 
-No obstante, la mecánica ondulatoria de Schrödinger estableció un cambio de paradigma que permanece vigente: los electrones no son partículas puntuales en órbitas definidas, sino distribuciones de probabilidad descritas por funciones de onda. Los números cuánticos no son postulados arbitrarios, sino consecuencias matemáticas de las condiciones de contorno. Y la estructura de la materia---desde el átomo de hidrógeno hasta la tabla periódica---emerge de una sola ecuación diferencial y un principio de exclusión. Estas ideas constituyen los cimientos sobre los que se construye la computación cuántica, tema que se abordará en asignaturas posteriores de este máster.
+No obstante, la mecánica ondulatoria de Schrödinger estableció un cambio de paradigma que permanece vigente: los electrones no son partículas puntuales en órbitas definidas, sino distribuciones de probabilidad descritas por funciones de onda. Los números cuánticos no son postulados arbitrarios, sino consecuencias matemáticas de las condiciones de contorno. Y la estructura de la materia—desde el átomo de hidrógeno hasta la tabla periódica—emerge de una sola ecuación diferencial y un principio de exclusión. Estas ideas constituyen los cimientos sobre los que se construye la computación cuántica, tema que se abordará en asignaturas posteriores de este máster.
 
 \chapter{Conclusiones}
 
