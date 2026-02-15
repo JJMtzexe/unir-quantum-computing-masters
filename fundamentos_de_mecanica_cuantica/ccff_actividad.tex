@@ -1,5 +1,12 @@
 \documentclass[12pt,a4paper,spanish]{book}
-
+\usepackage{fontspec}
+\setmainfont[
+    Path=../shared/fonts/, % Assuming your fonts are in a 'fonts' directory
+    UprightFont=*-Regular.ttf,
+    BoldFont=*-Bold.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldItalicFont=*-BoldItalic.ttf
+]{Calibri} 
 \usepackage{shared/estilo_unir-1}
 \usepackage{braket}
 \graphicspath{{fundamentos_de_mecanica_cuantica/images/}{images/}}

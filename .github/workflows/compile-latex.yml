@@ -19,6 +19,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
+          latexmk_use_lualatex: true
           root_file: |
             fundamentos_de_mecanica_cuantica/ccff_actividad.tex
       - name: Upload PDF files
