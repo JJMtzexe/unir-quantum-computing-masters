@@ -1,1 +1,1 @@
-lualatex -interaction=nonstopmode -output-directory=fundamentos_de_mecanica_cuantica fundamentos_de_mecanica_cuantica/ccff_actividad.tex
+lualatex  --file-line-error --halt-on-error --interaction=nonstopmode -recorder  "fundamentos_de_mecanica_cuantica/ccff_actividad.tex"
