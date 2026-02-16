@@ -1,18 +1,14 @@
 \documentclass[12pt,a4paper,spanish]{book}
 \usepackage{fontspec}
-\IfFileExists{../shared/fonts/Calibri/Calibri-Regular.ttf}{%
-    \setmainfont[
-        Path=../shared/fonts/Calibri/,
-        Extension=.ttf,
-        UprightFont=*-Regular,
-        BoldFont=*-Bold,
-        ItalicFont=*-Italic,
-        BoldItalicFont=*-BoldItalic
-    ]{Calibri}%
-}{%
-    \setmainfont{TeX Gyre Termes}%
-}
-\usepackage{../shared/estilo_unir-1}
+\setmainfont[
+    Path=shared/fonts/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+]{Calibri} 
+\usepackage{shared/estilo_unir-1}
 \usepackage{braket}
 
 \usepackage{tikz}
