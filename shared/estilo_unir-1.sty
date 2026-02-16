@@ -13,7 +13,6 @@
 \usepackage[utf8]{inputenc} %descomentar esta línea si se trabaja en linux
 %\usepackage[latin1]{inputenc} %comentar esta línea si se trabaja en linux
 
-
 %simbolos
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -42,22 +41,17 @@
 \pagestyle{fancy}
 \fancyhfoffset{20pt}
 \renewcommand{\headrulewidth}{0.0pt}
-\setlength{\headheight}{14pt}% 
+\setlength{\headheight}{14pt}%
 
 \renewcommand{\maketitle}{\creaportada}
 
 \renewcommand{\baselinestretch}{1.5}
 
-
-
 \usepackage{etoolbox}
 \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{\if@openright\clearpage\else\clearpage\fi}{}{}
 
-
-
 %hiper-referencias
 \usepackage[hidelinks]{hyperref}
-
 
 %
 %
@@ -70,9 +64,8 @@
 \profesor{}
 \nombreciudad{}
 
-\titleformat{\chapter}[hang]{\vspace{-4cm}\Huge\bfseries\color{azulunir}}{\thechapter. }{0pt}{\Huge\bfseries}
-
-
+\titleformat{\chapter}[hang]{\vspace{-4cm}\Huge\bfseries\color{azulunir}}{\thechapter.
+}{0pt}{\Huge\bfseries}
 
 %Entornos de teoremas
 \newtheorem{teo}{Teorema}[section]
@@ -115,44 +108,36 @@
 \newcommand{\Id}{\mathrm{Id}}
 \newcommand{\diag}{\mathrm{diag}}
 
+\newcommand{\creaportada}{\begingroup
+  \thispagestyle{empty}
+  \includegraphics[width= 0.8\textwidth]{shared/logo_unir}
 
+  \vspace{1cm}
+  \centering{
+    \begin{tabular}{!{\color{azulunir}\vrule width 2pt}p{12cm}}
+      {\Large {\bf Universidad Internacional de la Rioja (UNIR)}}
+      \\ \vspace{0.1cm}
+      { \huge {\bf Escuela Superior de Ingeniería y Tecnología}}
+      \\ \vspace{0.1cm}
+      { \Large {\bf Máster en Computación Cuántica}}\\ \vspace{1cm}
+      { \Large {\bf Fundamentos de Mecánica Cuántica (CCFF)}}\\ \vspace{1cm}
+      {\Huge {\bf {\color{azulunir}{\thetitle} }  }  }
+    \end{tabular}
+  }
+  \vfill
 
+  \noindent
+  \flushleft{
+    {\bf Actividad de la asignatura}\\  \vspace{0.3cm}
+    {\bf presentada por:} \theauthor\\  \vspace{0.3cm}
+    {\bf Profesor:} \@profesor
+  }
+  \vspace{3cm}
 
-
-
-\newcommand{\creaportada}{\begingroup  
-\thispagestyle{empty}
-\includegraphics[width= 0.8\textwidth]{shared/logo_unir}
-
-\vspace{1cm}
-\centering{
-\begin{tabular}{!{\color{azulunir}\vrule width 2pt}p{12cm}}
-{\Large {\bf Universidad Internacional de la Rioja (UNIR)}} \\ \vspace{0.1cm}
-{ \huge {\bf Escuela Superior de Ingeniería y Tecnología}} \\ \vspace{0.1cm}
-{ \Large {\bf Máster en Computación Cuántica}}\\ \vspace{1cm}
-{ \Large {\bf Fundamentos de Mecánica Cuántica (CCFF)}}\\ \vspace{1cm}
-{\Huge {\bf {\color{azulunir}{\thetitle} }  }  }
-\end{tabular}
-}
-\vfill
-
-\noindent
-\flushleft{
-{\bf Actividad de la asignatura}\\  \vspace{0.3cm}
-{\bf presentada por:} \theauthor\\  \vspace{0.3cm}
-{\bf Profesor:} \@profesor 
-}
-\vspace{3cm}
-
-
-{\color{azulunir}{Fecha:}} \thedate
-\newpage
-\thispagestyle{empty}
+  {\color{azulunir}{Fecha:}} \thedate
+  \newpage
+  \thispagestyle{empty}
 \endgroup}
-
-
-
-
 
 %---------------------------
 %cabecera del trabajo
@@ -164,14 +149,3 @@
 \rfoot{\thepage}
 \cfoot[]{}
 \chead[]{}
-
-
-
-
-
-
-
-
-
-
-
