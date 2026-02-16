@@ -598,15 +598,15 @@ correcta para todo el espectro y Ryleigh-Jeans conduce a inconsistencias.
 
 \section{El Fotón y la Estructura Nuclear: Einstein y Rutherford.}
 
-\subsection{El Efecto Fotoeléctrico}
+\subsection{El efecto fotoeléctrico}
 Según la teoría clásica, la luz es una perturbación periódica
 continua (u onda electromagnética) que se propaga en el espacio. Esta
 teoría predecía, por ejemplo, que en el efecto fotoeléctrico la
 energía de los electrones emitidos debería depender de la intensidad de la luz.
 Sin embargo en el postulado del efecto fotoeléctrico
-~\cite{einsteina1905_photoelectric} se demostró que la luz era de
-naturaleza corpuscular (formada por cuantos) así como la existencia
-de los fotones. A través de la experimentación se demostró que los
+~\cite{einsteina1905_photoelectric} el cuál le valió el premio Nobel
+de Física en 1921, constituyó que la luz era de
+naturaleza corpuscular . A través de la experimentación se demostró que los
 electrones saltaban de forma instantánea y solo si la luz superaba
 una frecuencia umbral específica, independientemente de cuán intensa
 fuera la luz. Esta relación se expresa matemáticamente como:
@@ -628,12 +628,53 @@ Siendo que:
 Esta formulación tiene la restricción de que $W_0$ debe ser mayor a
 $h\nu$ para que se produzca la emisión de electrones.
 
-Teniendo en cuenta la estructura de la ecuación anterior, es posible
-calcular la frecuencia umbral necesaria para que se produzca el
-efecto fotoeléctrico, despejando la expresión para obtener $\nu$:
+Teniendo en cuenta la estructura de la ecuación anterior, se puede
+refactorizar la expresión para obtener la frecuencia umbral necesaria
+para que se produzca el
+efecto fotoeléctrico ($\nu$):
 \begin{equation}
   \nu = \frac{W_0 + E_{\text{cin}}}{h}
 \end{equation}
+
+\subsection{El experimento de la lámina de oro}
+Después de que Einstein explicase cómo los electrones absorben y
+emiten energía, en 1909 Rutherford y su equipo realizaron una serie
+de experimentos para determinar la estructura del átomo.
+Uno de ellos fue el experimento de la lámina de oro, en el cual
+bombardearon una lámina de oro con partículas alfa provenientes de
+una fuente radioactiva de polonio.\cite{rutherford1911}
+El objetivo era observar cómo estas partículas atravesaban la materia.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{rutherford_gold_foil_experiment_diagram.png}
+  \caption{Ilustración de la disposición del experimento de la lámina
+  de oro the Rutherford. Fuente: \cite{battaglia2018}.}
+\end{figure}
+
+Las observaciones principales tras realizar el experimento fueron:
+\begin{itemize}
+  \item La mayoría de las partículas atravesaron la lámina de oro sin desviarse.
+  \item Un pequeño porcentaje de las partículas se desviaron de su
+    trayectoria original.
+  \item Un porcentaje aún menor de las partículas sufrió desviaciones
+    extremas, rebotando en ángulos superiores a 90 grados e incluso
+    regresando hacia la fuente
+\end{itemize}
+Éste último punto fue sorprendente ya que se requería un campo
+eléctrico inmenso para detener y desviar partículas con tal velocidad
+y masa en una capa tan delgada de materia.\cite{rutherford1911}
+
+De estos resultados, Rutherford extrajo conclusiones que refutaron el
+modelo previo del "budín de pasas" \cite{thomson1904}:
+
+\begin{itemize}
+  \item La mayor parte del átomo es espacio vacío.
+  \item El átomo tiene un núcleo central pequeño, denso y con carga positiva.
+  \item Los electrones orbitan alrededor del núcleo similar a cómo
+    los planetas orbitan alrededor del sol.
+\end{itemize}
+
 \section{El Átomo de Bohr-Sommerfeld y los Espectros Atómicos.}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -985,13 +1026,25 @@ párrafo por idea con un pequeño título ilustrativo.
   constitution of atoms and molecules. \emph{Philosophical Magazine},
   \emph{26}(151).
 
-  \bibitem[Born(1926)]{born1926} Born, M. (1926). Zur Quantenmechanik
+  \bibitem[(Born, 1926)]{born1926} Born, M. (1926). Zur Quantenmechanik
   der Stoßvorgänge [Sobre la mecánica cuántica de los procesos de
   colisión]. \emph{Zeitschrift für Physik}, \emph{37}(12).
 
   \bibitem[(de Broglie, 1924)]{debroglie1924} de Broglie, L. (1924).
   Recherches sur la théorie des quanta [Investigaciones sobre la
   teoría de los cuantos] (Tesis doctoral). Université de Paris.
+
+  \bibitem[(Thomson, 1904)]{thomson1904} Thomson, J. J. (1904).
+  On the structure of the atom: An investigation of the stability and
+  periods of oscillation of a number of corpuscles placed at equal
+  intervals around the circumference of a circle; with application of
+  the results to the theory of atomic structure.
+  [Sobre la estructura del átomo: Una investigación de la estabilidad
+    y los periodos de oscilación de un número de corpúsculos colocados
+    a intervalos iguales alrededor de la circunferencia de un círculo;
+  con aplicación de los resultados a la teoría de la estructura atómica]
+  \emph{The London, Edinburgh, and Dublin Philosophical Magazine and
+  Journal of Science}, \emph{7}(39).
 
   \bibitem[(Einstein, 1905)]{einsteina1905_photoelectric} Einstein,
   A. (1905). Über einen die Erzeugung und Verwandlung des Lichtes
@@ -1017,7 +1070,12 @@ párrafo por idea con un pequeño título ilustrativo.
   and philosophy. \emph{ResearchGate}.
   https://www.researchgate.net/publication/381897611
 
-  \bibitem[Pauli(1925)]{pauli1925} Pauli, W. (1925). Über den
+  \bibitem[(Battaglia, 2018)]{battaglia2018} Battaglia, F. (2018).
+  Understanding Molecules: Lectures on Chemistry for Physicists and
+  Engineers. \emph{ResearchGate}.
+  https://www.researchgate.net/publication/327657117
+
+  \bibitem[(Pauli, 1925)]{pauli1925} Pauli, W. (1925). Über den
   Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der
   Komplexstruktur der Spektren [Sobre la conexión entre la
     completitud de los grupos de electrones en el átomo con la
@@ -1030,7 +1088,7 @@ párrafo por idea con un pequeño título ilustrativo.
   energía en el espectro normal]. \emph{Verhandlungen der Deutschen
   Physikalischen Gesellschaft}.
 
-  \bibitem[Rutherford(1911)]{rutherford1911} Rutherford, E. (1911).
+  \bibitem[(Rutherford, 1911)]{rutherford1911} Rutherford, E. (1911).
   The scattering of \(\alpha\) and \(\beta\) particles by matter and
   the structure of the atom. \emph{Philosophical Magazine}, \emph{21}(125).
 
@@ -1042,7 +1100,7 @@ párrafo por idea con un pequeño título ilustrativo.
   (1926). Quantisierung als Eigenwertproblem [Cuantización como
   problema de valores propios]. \emph{Annalen der Physik}.
 
-  \bibitem[Sommerfeld(1916)]{sommerfeld1916} Sommerfeld, A. (1916).
+  \bibitem[(Sommerfeld, 1916)]{sommerfeld1916} Sommerfeld, A. (1916).
   Zur Quantentheorie der Spektrallinien [Sobre la teoría cuántica de
   las líneas espectrales]. \emph{Annalen der Physik}, \emph{356}(17).
 
