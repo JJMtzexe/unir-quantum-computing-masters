@@ -1,15 +1,25 @@
 \documentclass[12pt,a4paper,spanish]{book}
 \usepackage{fontspec}
-\setmainfont[
-    Path=shared/fonts/,
-    Extension=.ttf,
-    UprightFont=*-Regular,
-    BoldFont=*-Bold,
-    ItalicFont=*-Italic,
-    BoldItalicFont=*-BoldItalic
-]{Calibri} 
-\usepackage{shared/estilo_unir-1}
+\IfFileExists{../shared/fonts/Calibri/Calibri-Regular.ttf}{%
+    \setmainfont[
+        Path=../shared/fonts/Calibri/,
+        Extension=.ttf,
+        UprightFont=*-Regular,
+        BoldFont=*-Bold,
+        ItalicFont=*-Italic,
+        BoldItalicFont=*-BoldItalic
+    ]{Calibri}%
+}{%
+    \setmainfont{TeX Gyre Termes}%
+}
+\usepackage{../shared/estilo_unir-1}
 \usepackage{braket}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{float}
+\pgfplotsset{compat=1.18}
+
 \graphicspath{{fundamentos_de_mecanica_cuantica/images/}{images/}}
 
 %---------------------------
@@ -90,18 +100,31 @@ En esta Sección~\ref{contexto} debemos demostrar que conocemos lo que se ha hec
 
 \chapter{Objetivos}
 
-Esquematizar claramente los objetivos del Trabajo, las ideas que queremos demostrar. Podemos tener varios tipos de objetivos. Deben ordenarse claramente.
+\section{Objetivo general}
+Analizar la transición de la física cuántica partir de la radiación del cuerpo negro y su impacto en la comprensión de la luz, la estructura atómica y los modelos cuánticos.
+
+\section{Objetivos específicos}
+
+\begin{enumerate}
+    \item Describir y analizar las principales leyes clásicas de la radiación térmica, incluyendo la ley de Stefan--Boltzmann (1879), la ley de desplazamiento de Wien (1893) y la formulación de Rayleigh--Jeans.
+    
+    \item Conceptualizar la crisis de la física clásica y naturaleza de la luz. Explicando el debate onda-corpúsculo y por qué las leyes de Newton/Maxwell fallaban a nivel atómico.
+    
+    \item Describir el efecto fotoeléctrico, experimento de la lámina de oro, átomo de Bohr, Sommerfeld y series de Balmer/Lyman y Mostrar la transición del modelo de "gelatina con pasas" al modelo planetario cuantizado.
+    
+    \item Analizar la ecuación de ondas de Schrödinger, orbitales de probabilidad y números cuánticos y Explicar cómo los electrones forman ondas estacionarias tridimensionales y sustituir las "órbitas" por "nubes de probabilidad".
+\end{enumerate}
 
 \chapter{Desarrollo del Trabajo}
-
-Aquí desarrollaremos nuestro Trabajo. Contrastaremos la ideas entre varios autores y, si es posible, con las nuestras. Podemos incluir los subapartados que necesitemos.\\
 
 \section{La Radiación del Cuerpo Negro: De lo Clásico a Planck.}
 
 Planck desde joven se interesó en el estudio de la termodinámica, es decir el estudio de la relación entre el calor y
 las diferentes formas de energía, este ámbito no solo tenía un enorme peso científico, sino que también concentraba una 
 controversia fundamental sobre los principios que rigen la realidad física, Planck en búsqueda de la verdad, de lo absoluto, 
-enseño al mundo las primeras pistas de la física cuántica.\\
+enseño al mundo las primeras pistas de la física cuántica.\par
+\medskip
+
 
 Planck en sus estudios universitarios tuvo el privilegio de conocer de primera mano los avances del electromagnetismo y 
 termodinámica, ramas de la física esenciales para sus descubrimientos. Profundizando la comprensión del segundo principio, 
@@ -121,13 +144,13 @@ para mayor comprensión debemos plantearnos la siguiente pregunta ¿Qué es un c
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{cavidad_aproximado_cuerpo_negro.png}
-    \caption{Modelo de cavidad para aproximar a un cuerpo negro ideal. La radiación proveniente de una fuente externa entra por un orificio pequeño y 
-    sufre múltiples reflexiones en el interior de la cavidad. En cada reflexión, parte de la energía es absorbida por las paredes, de modo que la 
-    radiación incidente pierde progresivamente “memoria” de su dirección e intensidad inicial. Cuando el sistema alcanza equilibrio térmico, la 
-    cavidad reemite radiación electromagnética hacia el exterior, cuya distribución espectral depende principalmente de la temperatura de las 
-    paredes y se aproxima al espectro ideal de un cuerpo negro. Fuente:\cite{planck1900}}
+    \caption{Modelo de cavidad para aproximar a un cuerpo negro ideal. Fuente:\cite{planck1900}}
     \label{fig:espectro_cuerpo_negro}
 \end{figure}
+
+La radiación proveniente de una fuente externa entra por un orificio pequeño y sufre múltiples reflexiones en el interior de la cavidad. En cada reflexión, parte de la energía es absorbida por las paredes, de modo que la radiación incidente pierde progresivamente “memoria” de su dirección e intensidad inicial. Cuando el sistema alcanza equilibrio térmico, la cavidad reemite radiación electromagnética hacia el exterior, cuya distribución espectral depende principalmente de la temperatura de las paredes y se aproxima al espectro ideal de un cuerpo negro.  Fuente:\cite{planck1900}\par
+\medskip
+
 
 La magnitud fundamental que describe este fenómeno es la densidad \textbf{espectral de energía} por unidad de volumen: 
 
@@ -151,9 +174,10 @@ Y la energía total viene dada por:
     u(T)=\int_{0}^{\infty} u(\nu, T)\, d\nu
 \end{equation}
 
+El desafío consistía en encontrar la forma funcional correcta de \(u(\nu, T)\).
+
 El problema del cuerpo negro era matemático, físico y conceptualmente complicado ya que se necesitaba del electromagnetismo (ecuaciones de maxwell), 
 la mecánica estadística y el principio de equipartición de energía, este resultado dependía de una suposición implícita: La energía puede variar de 
-
 forma continua, esto fue el origen de la crisis ya que la teoría clásica lograba explicar partes del comportamiento, pero no el conjunto completo, 
 esto era una señal de que uno de los supuestos fundamentales de la física clásica estaba equivocado, esto representa uno de los momentos más importantes 
 de la física porque mostro el límite de la mecánica clásica, revelo que el principio de equipartición no era universal e introdujo la idea revolucionaria 
@@ -166,7 +190,8 @@ matemáticamente demuestra que la energía que emite un cuerpo está relacionada
 radiara, esta demuestra que incluso pequeños aumentos en la temperatura conducen a grandes incrementos en la energía irradiada, esta ley surge antes de la 
 existencia de la ,mecánica cuántica y antes de que se entendiera detalladamente la radiación del cuerpo negro, Josef Stefan la planteo basada en sus datos 
 experimentales y poco después Ludwing Boltzmann lo sustento teóricamente basándose en la termodinámica y el electromagnetismo clásico, en términos físicos 
-la ley dice que un objeto caliente emite radiación en todas las longitudes de onda y que la suma total de toda esa radiación depende fuertemente de la temperatura\cite{stefan1879}\\
+la ley dice que un objeto caliente emite radiación en todas las longitudes de onda y que la suma total de toda esa radiación depende fuertemente de la temperatura\cite{stefan1879}\par
+\medskip
 
 La ley establece que la \textbf{potencia total emitida por unidad de área} por un cuerpo negro es:
 
@@ -175,7 +200,6 @@ La ley establece que la \textbf{potencia total emitida por unidad de área} por 
 \end{equation}
 
 donde:
-
 \begin{equation}
     \begin{aligned}
         M &= \text{potencia radiada por unidad de aréa (también llamada \textbf{exitancia radiante}) } [W\cdot m^{-2}] \\
@@ -184,7 +208,7 @@ donde:
     \end{aligned}
 \end{equation}
 
-\textbf{Constante:}
+constante:
 \begin{equation}
     \sigma = 5.670374419 \times 10^{-8} \, [W\cdot m^{-2}\cdot K^{-4}]
 \end{equation}
@@ -212,9 +236,10 @@ en hornos, turbinas, disipadores calientes), Clima y energía, su soporte practi
 
 Cualquier cuerpo con temperatura mayor a cero emite radiación electromagnética esta emisión no ocurre en una sola magnitud de onda, sino cuya forma 
 depende fuertemente de la temperatura, con la aparición del concepto de cuerpo negro Wien formulo una ley: a longitud de onda en la que el cuerpo negro 
-emite con máxima intensidad se desplaza hacia longitudes de onda más cortas a medida que aumenta la temperatura, siguiendo una relación inversa\cite{wien1893}.\\
+emite con máxima intensidad se desplaza hacia longitudes de onda más cortas a medida que aumenta la temperatura, siguiendo una relación inversa\cite{wien1893}.\par
+\medskip
 
-\textbf{La ley se expresa como:}
+La ley se expresa como:
 
 \begin{equation}
     \lambda_{\text{max}} T = b
@@ -229,10 +254,166 @@ donde:
     \end{aligned}
 \end{equation}
 
-\textbf{Constante:}
+constante:
 \begin{equation}
     b = 2.897771955 \times 10^{-3} \, [m \cdot K]
 \end{equation}
+
+por tanto:
+\begin{equation}
+    \lambda_{\text{max}} = \frac{b}{T}
+\end{equation}
+
+En términos cualitativos: objetos fríos emiten principalmente en infrarrojo, mientras que objetos muy calientes emiten en visible o ultravioleta. La ley de Wien formaliza esta intuición y permite cuantificarla con una sola constante. 
+
+% Figura
+\begin{figure}[H]
+    \centering
+    {\bfseries Desplazamiento del máximo de emisión (Ley de desplazamiento de Wien)}\par
+    \vspace{0.4em}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            height=0.8\textwidth,
+            xlabel={Longitud de onda, \(\lambda\) (nm)},
+            ylabel={Radiancia espectral normalizada, \(B_\lambda(\lambda,T)/{\text{max}}(B_\lambda)\)},
+            xmin=100, xmax=4000,
+            ymin=0, ymax=1.05,
+            grid=both,
+            legend pos=north east,
+            domain=100:4000,
+            samples=300
+            ]   
+            \pgfmathsetmacro{\cTwo}{1.438776877e-2}
+            \pgfmathsetmacro{\bWien}{2.897771955e-3}
+            \pgfplotsset{
+                declare function={
+                    planck(\x,\T)=1/((\x*1e-9)^5 * (exp(\cTwo/((\x*1e-9)*\T)) - 1));
+                    lammax(\T)=\bWien/\T*1e9;
+                    normplanck(\x,\T)=planck(\x,\T)/planck(lammax(\T),\T);
+                }
+            }
+            \def\Ta{3000}
+            \def\Tb{4000}
+            \def\Tc{5800}
+            \def\Td{10000}
+            \addplot[thick, color=blue] {normplanck(x,\Ta)};
+            \addlegendentry{\(T=\Ta\,\mathrm{K}\)}
+            \addplot[thick, color=orange] {normplanck(x,\Tb)};
+            \addlegendentry{\(T=\Tb\,\mathrm{K}\)}
+            \addplot[thick, color=green] {normplanck(x,\Tc)};
+            \addlegendentry{\(T=\Tc\,\mathrm{K}\)}
+            \addplot[thick, color=red] {normplanck(x,\Td)};
+            \addlegendentry{\(T=\Td\,\mathrm{K}\)}
+            \addplot[densely dashed, color=blue] coordinates {(lammax(\Ta),0) (lammax(\Ta),1.05)};
+            \addplot[densely dashed, color=orange] coordinates {(lammax(\Tb),0) (lammax(\Tb),1.05)};
+            \addplot[densely dashed, color=green] coordinates {(lammax(\Tc),0) (lammax(\Tc),1.05)};
+            \addplot[densely dashed, color=red] coordinates {(lammax(\Td),0) (lammax(\Td),1.05)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Espectros \(B_\lambda(\lambda,T)\) normalizados para distintas temperaturas, con líneas punteadas indicando \(\lambda_{\text{max}} = b/T \). Fuente: elaboración a partir de \cite{planck1901}.}
+    \label{fig:wien_desplazamiento}
+\end{figure}
+
+En la figura (\ref{fig:wien_desplazamiento}), cada espectro se dividió por su valor máximo, de modo que todas las curvas alcanzan el valor 1 en su pico. Esto permite comparar exclusivamente la posición del máximo (y la forma relativa) sin que el aumento de magnitud con la temperatura oculte los detalles. Se aprecia que, al incrementar T, el pico migra hacia longitudes de onda más cortas: el espectro se “corre” hacia la izquierda. Este desplazamiento es la firma directa de la ley de Wien. Además, la anchura relativa del espectro cambia: a temperaturas más altas, la distribución mantiene un carácter amplio, pero con mayor peso relativo en el rango de \(\lambda\) cortas\cite{planck1901}. \par
+\medskip
+
+Esta ley tiene grandes aplicaciones, si se considera una estrella como un cuerpo negro, permite estimar una temperatura efectiva, este método ha sido fundamental en la clasificación estelar y en estimaciones iniciales de objetos irradiantes, También es utilizada en procesos industriales.\par
+\medskip
+
+\textbf{Ejercicio} (Ley de desplazamiento de Wien): temperatura de una estrella según su “color” (pico de emisión).\par
+\medskip
+
+Enunciado: una estrella presenta su maximo de emición en \(\lambda_{\text{max}} = 450 \, \text{nm}\) (zona azul del visible). Estima su temperatura superficial suponiendo que se comporta como un cuerpo negro.\par
+\medskip
+
+Datos: la constante de desplazamiento de Wien es \(b = 2.897771955 \times 10^{-3}\,\mathrm{m\,K}\).
+
+\begin{equation}
+    \lambda_{\max} T = b
+    \label{eq:wien}
+\end{equation}
+
+Despejando la temperatura:
+
+\begin{equation}
+    T=\frac{b}{\lambda_{\max}}.
+    \label{eq:wien_T}
+\end{equation}
+
+Para \(\lambda_{\max}=450\,\mathrm{nm}\), se convierte a metros:
+
+\begin{equation}
+    450\,\mathrm{nm} = 450\times10^{-9}\,\mathrm{m}=4.50\times10^{-7}\,\mathrm{m}.
+    \label{eq:lambda_conversion}
+\end{equation}
+
+Sustituyendo en \eqref{eq:wien_T}:
+
+\begin{equation}
+    T=\frac{2.897771955\times10^{-3}\,\mathrm{m\,K}}{4.50\times10^{-7}\,\mathrm{m}}\approx 6.44\times10^{3}\,\mathrm{K}.
+    \label{eq:wien_result}
+\end{equation}
+
+Por tanto, la temperatura correspondiente es \(T \approx 6.44\times10^{3}\,\mathrm{K}\) (aprox. \(6440\,\mathrm{K}\)).
+
+\subsection{Ley de Rayleigh-Jeans y la catástrofe ultravioleta}
+
+La ley de Rayleigh-Jeans constituye el intento clásico más influyente de derivar el espectro de radiación del cuerpo negro a partir de la mecánica estadística y la teoría electromagnética. Su importancia histórica radica en que reproduce con éxito el comportamiento experimental en el régimen de longitudes de onda grandes (bajas frecuencias), pero falla de manera dramática en el ultravioleta (altas frecuencias): predice una emisión que crece sin límite a medida que la longitud de onda disminuye. Esta divergencia recibe el nombre de catástrofe ultravioleta y fue una de las motivaciones directas para la introducción de la cuantización de la energía por Planck.\cite{rayleigh1900,jeans1905,planck1901}
+
+Para calcular la densidad espectral de energía: forma en frecuencia y en longitud de onda, se identificará:
+
+\begin{equation}
+    u(\nu, T) = \text{como la densidad espectral de energía}
+\end{equation}
+
+\begin{equation}
+    u(\nu, T)d\nu = \text{como la energía por volumen contenida entre } \nu \text{ y } \nu+d\nu.
+\end{equation}
+
+Planck en su artículo escribe que un puente técnico crucial es la relación de energía promedio U de un oscilador de frecuencia \(\nu\) y la densidad de energía radiactiva u a esa frecuencia:
+
+\begin{equation}
+    u(\nu, T) = \frac{8\pi\nu^2}{c^3} U(\nu, T)
+\end{equation}
+
+Planck la presenta como la ecuación (8) en su desarrollo, combinando relaciones de intensidad y densidad de energía. Esta relación es fundamental porque conecta la descripción microscópica (osciladores atómicos) con la macroscópica (radiación en el espacio), y es a través de esta conexión que Planck introduce la cuantización de la energía para resolver la catástrofe ultravioleta.\cite{planck1900}\par
+\medskip
+
+Ahora viene el paso clásico decisivo:\par
+\medskip
+
+En la física clásica, la energía media de un oscilador de frecuencia $\nu$ a temperatura $T$ viene dada por el teorema de equipartición:
+\begin{equation}
+    U(\nu,T)=\langle E\rangle = k_{B}T.
+    \label{eq:cla_dec}
+\end{equation}
+
+Sustituyendo \eqref{eq:cla_dec} en la relación entre $u(\nu,T)$ y $U(\nu,T)$, se obtiene la ley de Rayleigh-Jeans:
+\begin{equation}
+    u(\nu,T)=\frac{8\pi\nu^{2}}{c^{3}}\,k_{B}T.
+    \label{eq:rayleigh_jeans_u_nu}
+\end{equation}
+
+La “catástrofe ultravioleta” se hace visible al integrar la energía total predicha por Rayleigh-Jeans. La energía por unidad de volumen total sería:
+
+\begin{equation}
+    u_{\text{tot}}(T) = \int_{0}^{\infty} u(\nu,T)\,d\nu = \int_{0}^{\infty}\frac{8\pi\nu^{2}}{c^{3}}\,k_{B}T\,d\nu = \frac{8\pi k_{B}T}{c^{3}}\int_{0}^{\infty}\nu^{2}\,d\nu
+\end{equation}
+
+pero
+
+\begin{equation}
+    \int_{0}^{\infty}\nu^{2}\,d\nu = \lim_{N\to\infty}\int_{0}^{N}\nu^{2}\,d\nu = \lim_{N\to\infty}\frac{N^{3}}{3} = \infty
+\end{equation}
+
+En la física clásica teórica predice energía infinita cuando se permiten frecuencias arbitrariamente grandes, esto no concuerda con mediciones prácticas, el espectro real presenta un máximo y luego cae rápidamente por ello Planck en su artículo de 1901 enfatiza que las mediciones espectrales mostraban que leyes previas no eran universalmente validas, y que la teoría requería una corrección.\cite{planck1901}\par
+\medskip
+
+¿Que plantea Max Planck?\par 
+\medskip
+
+La ley de \cite{planck1900} es la relación matemática que describe, por primera vez de forma completa y en acuerdo con el experimento, cómo se distribuye la energía radiada por un cuerpo negro entre las distintas frecuencias, Explica que la formulación de Wien no es correcta para todo el espectro y Ryleigh-Jeans conduce a inconsistencias.
 
 \section{El Fotón y la Estructura Nuclear: Einstein y Rutherford.}
 
@@ -244,12 +425,12 @@ Sin embargo en el postulado del efecto fotoeléctrico ~\cite{einsteina1905_photo
 \end{equation}
 Siendo que:
 \begin{itemize}
-\item $E_{\gamma}$ es la energía del fotón.
-\item $h\nu$ es la constante de Plank ($h$) multiplicada por la frecuencia de la radiación ($\nu$).
-\item $W_0$ es la energía de extracción.
-\item $E_{\text{cin}}$ es la energía cinética máxima de los electrones emitidos.
+\item \(E_{\gamma}\) es la energía del fotón.
+\item \(h\nu\) es la constante de Plank (\(h\)) multiplicada por la frecuencia de la radiación (\(\nu\)).
+\item \(W_0\) es la energía de extracción.
+\item \(E_{\text{cin}}\) es la energía cinética máxima de los electrones emitidos.
 \end{itemize}
-Con la restricción de que $W_0$ debe ser mayor a $h\nu$ para que se produzca la emisión de electrones.
+Con la restricción de que \(W_0\) debe ser mayor a \(h\nu\) para que se produzca la emisión de electrones.
 
 Es posible utilizar esta formulación para calcular la frecuencia umbral necesaria para que se produzca el efecto fotoeléctrico, una vez despejada la expresión:
 \begin{equation}
@@ -463,11 +644,17 @@ Las Conclusiones es otra parte muy IMPORTANTE de la memoria. Deben ser muy clara
 
 \bibitem[Sommerfeld(1916)]{sommerfeld1916} Sommerfeld, A. (1916). Zur Quantentheorie der Spektrallinien [Sobre la teoría cuántica de las líneas espectrales]. \emph{Annalen der Physik}, \emph{356}(17).
 
-\bibitem[(Stefan, 1879)]{stefan1879}Stefan, J. (1879). Über die Beziehung zwischen der Wärmestrahlung und der Temperatur.
+\bibitem[(Stefan, 1879)]{stefan1879} Stefan, J. (1879). Über die Beziehung zwischen der Wärmestrahlung und der Temperatur.
 
-\bibitem[(Wien, 1893)]{wien1893}Wien, W. (1893). Die obere Grenze der Wellenlängen, welche in der Wärmestrahlung fester Körper vorkommen können; Folgerungen aus dem zweiten Hauptsatz der Wärmetheorie.
+\bibitem[(Wien, 1893)]{wien1893} Wien, W. (1893). Die obere Grenze der Wellenlängen, welche in der Wärmestrahlung fester Körper vorkommen können; Folgerungen aus dem zweiten Hauptsatz der Wärmetheorie.
 
-\bibitem[(Planck, 1900)]{planck1900}Planck, M. (1900). Zur Theorie des Gesetzes der Energieverteilung im Normalspektrum.
+\bibitem[(Planck, 1900)]{planck1900} Planck, M. (1900). Zur Theorie des Gesetzes der Energieverteilung im Normalspektrum.
+
+\bibitem[(Planck, 1901)]{planck1901} Planck, M. (1901). On the Law of Distribution of Energy in the Normal Spectrum [Traducción fiel de la publicación alemana]. \emph{Annalen der Physik}.
+
+\bibitem[(Rayleigh, 1900)]{rayleigh1900} Rayleigh, Lord (1900). On the light from the sky, its polarization and colour. \emph{Philosophical Magazine}.
+
+\bibitem[(Jeans, 1905)]{jeans1905} Jeans, J. H. (1905). On the partition of energy between matter and ether. \emph{Philosophical Magazine}.
 
 \end{thebibliography}
 %\bibliographystyle{plain} 
