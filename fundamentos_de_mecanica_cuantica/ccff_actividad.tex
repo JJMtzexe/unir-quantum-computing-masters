@@ -1,13 +1,4 @@
-\documentclass[12pt,a4paper,spanish]{book}
-\usepackage{fontspec}
-\setmainfont[
-  Path=shared/fonts/,
-  Extension=.ttf,
-  UprightFont=*-Regular,
-  BoldFont=*-Bold,
-  ItalicFont=*-Italic,
-  BoldItalicFont=*-BoldItalic
-]{Calibri}
+\documentclass[11pt,a4paper,spanish]{book}
 \usepackage{shared/estilo_unir-1}
 \usepackage{braket}
 
@@ -31,7 +22,7 @@ Garnica, Jeyson Antonio Flores Deras y José Juan Martínez Tapia}
 
 %---------------------------
 %marges
-%---------------------------
+%--------s-------------------
 %\usepackage[margin=1.9cm]{geometry}
 %---------------------------
 %---------------------------
@@ -39,7 +30,6 @@ Garnica, Jeyson Antonio Flores Deras y José Juan Martínez Tapia}
 %---------------------------
 \begin{document}
 \renewcommand{\listfigurename}{Índice de figuras}
-\renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\contentsname}{Índice de contenidos}
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabla}
@@ -49,11 +39,10 @@ Garnica, Jeyson Antonio Flores Deras y José Juan Martínez Tapia}
 \frontmatter
 \tableofcontents
 \listoffigures %atención, quitar si no hay figuras!!!
-\listoftables %atención, quitar si no hay tablas!!!
 
 \chapter{Resumen}
 
-Este trabajo analizará la revolución conceptual que transformó la
+Este Trabajo analizará la revolución conceptual que transformó la
 física entre finales del siglo XIX y principios del XX, cuando se
 empezaron a investigar y observar comportamientos que las reglas
 ``clásicas'' no podían explicar, como la famosa catástrofe
@@ -67,13 +56,13 @@ detrás de cada uno de los hitos que dieron lugar al nacimiento de la
 deberá comprender más a fondo y a detalle la historia detrás de cada
 descubrimiento.
 
-El trabajo concluye en que esta transición hacia la mecánica de ondas
+El Trabajo concluye en que esta transición hacia la mecánica de ondas
 no solamente resolvió las crisis a explorar, sino que estableció las
 bases indispensables de la computación cuántica, tema que abordaremos
 en futuras asignaturas (fuera del alcance de este documento).\\
 
-{\bf Palabras clave:} Radiación de cuerpo negro, Cuantización,
-Ecuación de Schrödinger, Mecánica ondulatoria.\\
+{\bf Palabras clave:} radiación de cuerpo negro, cuantización,
+ecuación de Schrödinger, mecánica ondulatoria.\\
 
 \chapter{Abstract}
 
@@ -96,16 +85,16 @@ only resolved the crises to be explored below, but also established
 the essential foundations of quantum computing, a topic we will
 address in future courses (out of this paper's scope).\\
 
-{\bf Keywords:} Black-body radiation, Quantization, Schrödinger
-equation, Wave mechanics.\\
+{\bf Keywords:} black-body radiation, quantization, Schrödinger
+equation, wave mechanics.\\
 
 \mainmatter
 \chapter{Introducción}
 
 En la Introducción se debe resumir de forma esquemática pero
 suficientemente clara lo esencial de cada una de las partes del
-trabajo. La lectura de esta parte debe contextualizar perfectamente
-todo el trabajo y debe estar PLAGADA DE REFERENCIAS.\\
+Trabajo. La lectura de esta parte debe contextualizar perfectamente
+todo el Trabajo y debe estar PLAGADA DE REFERENCIAS.\\
 
 Las referencias NO están para rellenar. Son un TRIBUTO a las personas
 que hicieron en primer lugar una investigación o aportaron una idea,
@@ -168,7 +157,7 @@ estructura atómica y los modelos cuánticos.
 
 \chapter{Desarrollo del Trabajo}
 
-\section{La Radiación del Cuerpo Negro: De lo Clásico a Planck.}
+\section{La radiación del cuerpo negro: de lo clásico a Planck.}
 
 Planck desde joven se interesó en el estudio de la termodinámica, es
 decir el estudio de la relación entre el calor y
@@ -211,8 +200,7 @@ es un cuerpo negro? Es un sistema ideal que debe cumplir dos características:
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{cavidad_aproximado_cuerpo_negro.png}
-  \caption{Modelo de cavidad para aproximar a un cuerpo negro ideal.
-  Fuente:\cite{planck1900}}
+  \caption{Modelo de cavidad para aproximar a un cuerpo negro ideal.}
   \label{fig:espectro_cuerpo_negro}
 \end{figure}
 
@@ -434,12 +422,11 @@ cuantificarla con una sola constante.
   \end{tikzpicture}
   \caption{Espectros \(B_\lambda(\lambda,T)\) normalizados para
     distintas temperaturas, con líneas punteadas indicando
-    \(\lambda_{\text{max}} = b/T \). Fuente: elaboración a partir de
-  \cite{planck1901}.}
+    \(\lambda_{\text{max}} = b/T \).}
   \label{fig:wien_desplazamiento}
 \end{figure}
 
-En la figura (\ref{fig:wien_desplazamiento}), cada espectro se
+En la Figura (\ref{fig:wien_desplazamiento}), cada espectro se
 dividió por su valor máximo, de modo que todas las curvas alcanzan el
 valor 1 en su pico. Esto permite comparar exclusivamente la posición
 del máximo (y la forma relativa) sin que el aumento de magnitud con
@@ -596,7 +583,7 @@ cómo se distribuye la energía radiada por un cuerpo negro entre las
 distintas frecuencias, Explica que la formulación de Wien no es
 correcta para todo el espectro y Ryleigh-Jeans conduce a inconsistencias.
 
-\section{El Fotón y la Estructura Nuclear: Einstein y Rutherford.}
+\section{El fotón y la estructura nuclear: Einstein y Rutherford.}
 
 \subsection{El efecto fotoeléctrico}
 Según la teoría clásica, la luz es una perturbación periódica
@@ -649,7 +636,7 @@ El objetivo era observar cómo estas partículas atravesaban la materia.
   \centering
   \includegraphics[width=0.7\textwidth]{rutherford_gold_foil_experiment_diagram.png}
   \caption{Ilustración de la disposición del experimento de la lámina
-  de oro the Rutherford. Fuente: \cite{battaglia2018}.}
+  de oro the Rutherford.}
 \end{figure}
 
 Las observaciones principales tras realizar el experimento fueron:
@@ -675,7 +662,7 @@ modelo previo del "budín de pasas" \cite{thomson1904}:
     los planetas orbitan alrededor del sol.
 \end{itemize}
 
-\section{El Átomo de Bohr-Sommerfeld y los Espectros Atómicos.}
+\section{El átomo de Bohr-Sommerfeld y los espectros atómicos.}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -683,7 +670,7 @@ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 aliquip ex ea commodo consequat. Duis aute irure dolor in
 reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-\section{El Modelo de Schrödinger: Mecánica Ondulatoria.}
+\section{El modelo de Schrödinger: mecánica ondulatoria.}
 
 Esta sección explorará el contexto histórico y el razonamiento que
 dieron lugar a la famosa ecuación de ondas de Erwin
@@ -754,8 +741,8 @@ propio Rutherford, quien en una carta dirigida a Bohr señaló: ``¿cómo
 decide un electrón a qué frecuencia va a vibrar cuando pasa de un
 estado estacionario a otro? Pareciera que se debe asumir que el
 electrón sabe de antemano dónde se va a
-detener''~\cite{rutherford1913carta}. \textbf{Hacía falta, por tanto,
-cambiar el panorama completo.}
+detener''~\cite{rutherford1913carta}. Hacía falta, por tanto,
+cambiar el panorama completo.
 
 \subsection{De Broglie y su razonamiento de la dualidad onda-partícula}
 
@@ -786,7 +773,7 @@ estacionaria—es decir, para que al completar una vuelta, la onda
   \centering
   \includegraphics[width=0.8\textwidth]{ondas_estacionarias_debroglie.png}
   \caption{Ondas estacionarias de de Broglie en órbitas de radio
-  creciente. Fuente: \cite{elert2024}.}
+  creciente.}
   \label{fig:debroglie_ondas}
 \end{figure}
 
@@ -952,7 +939,7 @@ tener que cumplir condiciones físicas en una geometría esférica, solo
   \centering
   \includegraphics[width=0.7\textwidth]{orbitales_schrodinger_born.png}
   \caption{Orbitales atómicos de Schrödinger-Born, etiquetados por
-  \((n, \ell, m)\). Fuente: \cite{malgieri2022}.}
+  \((n, \ell, m)\).}
   \label{fig:orbitales}
 \end{figure}
 
@@ -1128,55 +1115,5 @@ párrafo por idea con un pequeño título ilustrativo.
 \end{thebibliography}
 %\bibliographystyle{plain}
 %\bibliography{bibliografia}
-
-\appendix
-\chapter{Apéndices}
-
-El modelo de \cite{rutherford1911} estableció que los electrones
-orbitan alrededor de un núcleo de carga positiva. Sin embargo, según
-las leyes de la electrodinámica clásica, un electrón en movimiento
-orbital debería emitir radiación de forma continua, perder energía, y
-caer en espiral hacia el núcleo. \textbf{Esto, evidentemente, no ocurre.}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.8\textwidth,
-  height=0.2\textwidth]{espectroscopia_emision_h.jpg}
-  \caption{Espectro de emisión del hidrógeno.}
-  \label{fig:espectro_h}
-\end{figure}
-
-Asimismo, Bohr, al observar que las frecuencias del espectro de
-emisión del hidrógeno (Figura~\ref{fig:espectro_h}) no se podían
-explicar si se consideraba a la energía del electrón (y por ende,
-radiación) como un rango continuo, determinó que las líneas
-espectrales correspondían a la radiación emitida cuando un electrón
-transicionaba entre dos estados de energía discretos indicados por el
-número cuántico \(n\)~\cite{bohr1913}. La energía de estos estados viene dada:
-
-\begin{equation}
-  E_n = -\frac{E_0}{n^2}, \quad \textit{donde } E_0 = \frac{e^4
-  m_e}{8\varepsilon_0^2 h^2} = 13.6 \text{ eV}
-  \label{eq:energia_bohr}
-\end{equation}
-
-\(E_0\) es la energía del estado fundamental del átomo de hidrógeno,
-que resulta de combinar la energía cinética y potencial coulombiana
-del electrón con la condición de cuantización del
-momento angular (el momento angular se expresa por \(L = n\hbar\); es
-decir, por cuantos de \(\hbar\)). La energía del fotón emitido
-durante la transición entre dos estados estacionarios es:
-
-\begin{equation}
-  E_{\textit{fotón}} = E_i - E_f = h\nu
-\end{equation}
-
-Donde:
-\begin{itemize}
-  \item \(E_i\) : energía del estado inicial del electrón, donde \(E_i > E_f\)
-  \item \(E_f\) : energía del estado final del electrón.
-  \item \(h = 6.626 \times 10^{-34}\) J \(\cdot\) s : constante de Planck.
-  \item \(\nu\) : frecuencia del fotón emitido.
-\end{itemize}
 
 \end{document}
