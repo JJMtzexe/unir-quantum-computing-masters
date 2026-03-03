@@ -201,7 +201,9 @@ es un cuerpo negro? Es un sistema ideal que debe cumplir dos características:
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{cavidad_aproximado_cuerpo_negro.png}
-  \caption{Modelo de cavidad para aproximar a un cuerpo negro ideal.}
+  \caption[Modelo de cavidad para aproximar a un cuerpo negro
+  ideal]{Modelo de cavidad para aproximar a un cuerpo negro ideal.
+  Fuente: \citet{planck1900}}.
   \label{fig:espectro_cuerpo_negro}
 \end{figure}
 
@@ -213,7 +215,7 @@ de su dirección e intensidad inicial. Cuando el sistema alcanza
 equilibrio térmico, la cavidad reemite radiación electromagnética
 hacia el exterior, cuya distribución espectral depende principalmente
 de la temperatura de las paredes y se aproxima al espectro ideal de
-un cuerpo negro.  Fuente:\cite{planck1900}\par
+un cuerpo negro.  Fuente:\cite{planck1900}\par.
 \medskip
 
 La magnitud fundamental que describe este fenómeno es la densidad
@@ -223,9 +225,7 @@ La magnitud fundamental que describe este fenómeno es la densidad
   u(v, T)
   \label{eq:densidad_espectral_energia}
 \end{equation}
-
 donde:
-
 \begin{equation}
   \begin{aligned}
     v &= \text{frecuencia} \\
@@ -421,9 +421,12 @@ cuantificarla con una sola constante.
       {(lammax(\Td),0) (lammax(\Td),1.05)};
     \end{axis}
   \end{tikzpicture}
-  \caption{Espectros \(B_\lambda(\lambda,T)\) normalizados para
+  \caption[Espectros \(B_\lambda(\lambda,T)\) normalizados para
     distintas temperaturas, con líneas punteadas indicando
-    \(\lambda_{\text{max}} = b/T \).}
+  \(\lambda_{\text{max}} = b/T \)]{Espectros \(B_\lambda(\lambda,T)\)
+    normalizados paradistintas temperaturas, con líneas punteadas
+    indicando \(\lambda_{\text{max}} = b/T \). Fuente: elaboración
+  propia a partir de \citet{planck1901}.}
   \label{fig:wien_desplazamiento}
 \end{figure}
 
@@ -591,9 +594,10 @@ Según la teoría clásica, la luz es una perturbación periódica
 continua (u onda electromagnética) que se propaga en el espacio. Esta
 teoría predecía, por ejemplo, que en el efecto fotoeléctrico la
 energía de los electrones emitidos debería depender de la intensidad de la luz.
-Sin embargo en el postulado del efecto fotoeléctrico
-~\cite{einsteina1905_photoelectric} el cuál le valió el premio Nobel
-de Física en 1921, constituyó que la luz era de
+Sin embargo en el postulado del efecto fotoeléctrico de
+\citet{einsteina1905_photoelectric},
+el cuál fue la razón por la que recibió el premio Nobel de Física en
+1921, constituyó que la luz era de
 naturaleza corpuscular . A través de la experimentación se demostró que los
 electrones saltaban de forma instantánea y solo si la luz superaba
 una frecuencia umbral específica, independientemente de cuán intensa
@@ -601,7 +605,7 @@ fuera la luz. Esta relación se expresa matemáticamente como:
 \begin{equation}
   E_{\gamma} = h\nu = W_0 + E_{\text{cin}}
 \end{equation}
-Siendo que:
+donde:
 \begin{itemize}
   \item $h\nu$ es la constante de Planck
     ($h$)~\cite{planck1900} medida en Julios por
@@ -630,16 +634,16 @@ emiten energía, en 1909 Rutherford y su equipo realizaron una serie
 de experimentos para determinar la estructura del átomo.
 Uno de ellos fue el experimento de la lámina de oro, en el cual
 bombardearon una lámina de oro con partículas alfa provenientes de
-una fuente radioactiva de polonio.\cite{rutherford1911}
+una fuente radioactiva de polonio.\citep{rutherford1911}
 El objetivo era observar cómo estas partículas atravesaban la materia.
-
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{rutherford_gold_foil_experiment_diagram.png}
-  \caption{Ilustración de la disposición del experimento de la lámina
-  de oro the Rutherford.}
+  \caption[Ilustración de la disposición del experimento de la lámina
+  de oro the Rutherford]{Ilustración de la disposición del
+    experimento de la lámina de oro the Rutherford. Fuente:
+  \citet{battaglia2018}}.
 \end{figure}
-
 Las observaciones principales tras realizar el experimento fueron:
 \begin{itemize}
   \item La mayoría de las partículas atravesaron la lámina de oro sin desviarse.
@@ -651,10 +655,10 @@ Las observaciones principales tras realizar el experimento fueron:
 \end{itemize}
 Éste último punto fue sorprendente ya que se requería un campo
 eléctrico inmenso para detener y desviar partículas con tal velocidad
-y masa en una capa tan delgada de materia.\cite{rutherford1911}
+y masa en una capa tan delgada de materia.\citep{rutherford1911}
 
 De estos resultados, Rutherford extrajo conclusiones que refutaron el
-modelo previo del "budín de pasas" \cite{thomson1904}:
+modelo previo del "budín de pasas" \citep{thomson1904}:
 
 \begin{itemize}
   \item La mayor parte del átomo es espacio vacío.
@@ -665,18 +669,36 @@ modelo previo del "budín de pasas" \cite{thomson1904}:
 
 \section{El átomo de Bohr-Sommerfeld y los espectros atómicos.}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\subsection{La constante de Rydberg}
+
+Escrita como $R_{\infty}$, es el componente central de la
+ecuación de Rydberg para el hidrógeno \citep{rydberg1890} la cuál
+relaciona la longitud de onda (\lambda)
+de la luz emitida o absorbida con el salto de un electrón entre dos
+niveles de energía distintos. Esta ecuación se define como:
+\begin{equation}
+  \frac{1}{\lambda} = -R_{\infty} \left( \frac{1}{n^2} - \frac{1}{n_0^2} \right)
+\end{equation}
+donde:
+\begin{itemize}
+  \item $\lambda$ es la longitud de onda de la luz emitida o absorbida.
+  \item $n$ y $n_0$ son números enteros que representan los niveles
+    de energía del electrón.
+  \item $R_{\infty}$ es la constante de \citet{rydberg1890}. Es
+    importante mencionar que al
+    momento de la publicación de la ecuación de Rydberg, no se
+    conocía el valor de esta constante
+    en términos de constantes fundamentales de la física. Su valor se
+    derivaría más adelante a partir del modelo atómico de \citet{bohr1913}.
+\end{itemize}
 
 \section{El modelo de Schrödinger: mecánica ondulatoria.}
 
 Esta sección explorará el contexto histórico y el razonamiento que
 dieron lugar a la famosa ecuación de ondas de Erwin
 Schrödinger~(\citeyear{schrodinger1926}). Partiremos del acierto del modelo
-de Bohr~(\citeyear{bohr1913}) respecto a que los niveles de energía del átomo podían
+de Bohr~(\citeyear{bohr1913}) respecto a que los niveles de energía
+del átomo podían
 cuantificarse (no obstante, aún sin fundamentos), hasta la
 construcción de la mecánica ondulatoria~\citep{schrodinger1926}
 y la mecánica matricial~\citep{heisenberg1925}.\\
@@ -725,7 +747,8 @@ fina~\citep{sommerfeld1916}, que mostraban desdoblamientos en las líneas
 espectrales que solo podían explicarse si la energía también dependía
 de \(\ell\) y \(m\).\\
 
-Al igual que en el modelo de Bohr~(\citeyear{bohr1913}), los valores permitidos de \(\ell\)
+Al igual que en el modelo de Bohr~(\citeyear{bohr1913}), los valores
+permitidos de \(\ell\)
 y \(m\) se imponen mediante reglas de cuantización sin una
 justificación teórica de fondo. Seguían siendo restricciones que
 funcionaban, pero que aún nadie podía derivar.\\
@@ -769,7 +792,8 @@ ondas?~\citep{debroglie1924}\\
 \end{equation}
 
 Esta hipótesis tuvo una consecuencia inmediata sobre el modelo de
-Bohr~\citep{bohr1913}. Si el electrón es una onda, su órbita alrededor del núcleo debe
+Bohr~\citep{bohr1913}. Si el electrón es una onda, su órbita
+alrededor del núcleo debe
 contener un número entero de longitudes de onda para que la onda sea
 estacionaria—es decir, para que al completar una vuelta, la onda
 ``cierre'' sobre sí misma sin destruirse por interferencia destructiva.\\
@@ -778,7 +802,7 @@ estacionaria—es decir, para que al completar una vuelta, la onda
   \centering
   \includegraphics[width=0.8\textwidth]{ondas_estacionarias_debroglie.png}
   \caption[Ondas estacionarias de de Broglie en órbitas de radio
-  creciente.]{Ondas estacionarias de de Broglie en órbitas de radio
+  creciente]{Ondas estacionarias de de Broglie en órbitas de radio
   creciente. Fuente: \cite{elert2024}.}
   \label{fig:debroglie_ondas}
 \end{figure}
@@ -895,7 +919,8 @@ cuantización no se impone: emerge naturalmente de las condiciones de
 contorno que debe satisfacer \(\psi\) (ser finita, continua y
 normalizable). En el modelo de Schrödinger, las órbitas del electrón
 son sustituidas por \textit{orbitales} espaciales que representan la
-probabilidad de encontrar al electrón en un punto del espacio~\citep{schrodinger1926}.\\
+probabilidad de encontrar al electrón en un punto del
+espacio~\citep{schrodinger1926}.\\
 
 \subsection{Solución para el hidrógeno: números cuánticos, orbitales
 y nubes de probabilidad}
@@ -947,7 +972,8 @@ probabilidad de encontrar al electrón en la posición \(\mathbf{r}\).
 Las ``órbitas'' definidas del modelo de Bohr se transforman en nubes
 de probabilidad tridimensionales—los orbitales. Los orbitales \(s\)
 (\(\ell = 0\)) son esféricos, los \(p\) (\(\ell = 1\)) tienen forma
-bilobular, y los \(d\) (\(\ell = 2\)) presentan formas cuadrilobulares~\citep{born1926}.\\
+bilobular, y los \(d\) (\(\ell = 2\)) presentan formas
+cuadrilobulares~\citep{born1926}.\\
 
 Un cuarto número cuántico, el espín (\(m_s = \pm 1/2\)), fue
 introducido por \cite{pauli1925} para explicar la estructura fina de
@@ -979,7 +1005,8 @@ reconocidas en la literatura~\citep{dirac1928}:\\
 
 Las dos primeras limitaciones fueron resueltas por Paul Dirac en
 1928, quien formuló una ecuación que unifica la mecánica cuántica con
-la relatividad especial~\citep{dirac1928}. De esta ecuación, el espín y la existencia
+la relatividad especial~\citep{dirac1928}. De esta ecuación, el espín
+y la existencia
 de la antimateria emergen como consecuencias naturales de la teoría,
 de la misma forma en que los números cuánticos \(n\), \(\ell\) y
 \(m\) emergen de la ecuación de
@@ -1009,8 +1036,7 @@ párrafo por idea con un pequeño título ilustrativo.
 
   \bibitem[Battaglia(2018)]{battaglia2018} Battaglia, F. (2018).
   Understanding Molecules: Lectures on Chemistry for Physicists and
-  Engineers. \emph{ResearchGate}.
-  https://www.researchgate.net/publication/327657117
+  Engineers. 10.1201/9780429448263.
 
   \bibitem[Bohr(1913)]{bohr1913} Bohr, N. (1913). On the
   constitution of atoms and molecules. \emph{Philosophical Magazine},
@@ -1050,14 +1076,15 @@ párrafo por idea con un pequeño título ilustrativo.
   \bibitem[Pauli(1925)]{pauli1925} Pauli, W. (1925). Über den
   Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der
   Komplexstruktur der Spektren [Sobre la conexión entre la
-  completitud de los grupos de electrones en el átomo con la
+    completitud de los grupos de electrones en el átomo con la
   estructura compleja de los espectros]. \emph{Zeitschrift für
   Physik}, \emph{31}(1).
 
   \bibitem[Planck(1900)]{planck1900} Planck, M. (1900). Zur Theorie
   des Gesetzes der Energieverteilung im Normalspectrum [Sobre la
   teoría de la ley de distribución de energía en el espectro normal].
-  \emph{Verhandlungen der Deutschen Physikalischen Gesellschaft}.
+  \emph{Verhandlungen der Deutschen Physikalischen Gesellschaft},
+  \textit{2}, 237--245.
 
   \bibitem[Planck(1901)]{planck1901} Planck, M. (1901). On the Law
   of Distribution of Energy in the Normal Spectrum [Traducción fiel
@@ -1076,14 +1103,21 @@ párrafo por idea con un pequeño título ilustrativo.
   A. S. (1939). \emph{Rutherford: Being the Life and Letters of the
   Rt. Hon. Lord Rutherford, O.M.} Cambridge University Press.
 
+  \bibitem[Rydberg(1890)]{rydberg1890} Rydberg, J. R. (1890).
+  Recherches sur la constitution des spectres d'émission des éléments chimiques
+  [Investigaciones sobre la composición de los espectros de emisión
+  de los elementos químicos]
+  \emph{Kongliga Svenska Vetenskaps-Akademiens Handlingar}, \emph{23}(11).
+
   \bibitem[Schrödinger(1926a)]{schrodinger1926} Schrödinger, E.
   (1926). Quantisierung als Eigenwertproblem [Cuantización como
-  problema de valores propios]. \emph{Annalen der Physik}.
+  problema de valores propios]. \emph{Annalen der Physik},
+  \textit{384}(4), 361--376.
 
   \bibitem[Schrödinger(1926b)]{schrodinger1926_equivalencia}
   Schrödinger, E. (1926). Über das Verhältnis der
   Heisenberg-Born-Jordanschen Quantenmechanik zu der meinen [Sobre la
-  relación entre la mecánica cuántica de Heisenberg-Born-Jordan y la
+    relación entre la mecánica cuántica de Heisenberg-Born-Jordan y la
   mía]. \emph{Annalen der Physik}, \emph{384}(8).
 
   \bibitem[Sommerfeld(1916)]{sommerfeld1916} Sommerfeld, A. (1916).
