@@ -128,6 +128,7 @@ suficientes y que esas ideas se han volcado en el Trabajo en la línea
 de los objetivos que perseguimos o que queremos transmitir.
 
 \chapter{Objetivos}
+
 En este capítulo se presentan los objetivos generales y específicos
 que guían el desarrollo del Trabajo.
 
@@ -140,33 +141,34 @@ estructura atómica y los modelos cuánticos.
 
 \begin{enumerate}
   \item Describir y analizar las principales leyes clásicas de la
-    radiación térmica, incluyendo la ley de Stefan--Boltzmann (1879),
-    la ley de desplazamiento de Wien (1893) y la formulación de Rayleigh--Jeans.
+    radiación térmica, incluyendo la ley de \cite{stefan1879}--\cite{boltzmann1884},
+    la ley de desplazamiento de Wien \cite{wien1893} y la formulación de \cite{rayleigh1900}--\cite{jeans1905}.
 
   \item Conceptualizar la crisis de la física clásica y naturaleza de
     la luz. Explicando el debate onda-corpúsculo y por qué las leyes
-    de Newton/Maxwell fallaban a nivel atómico.
+    de \cite{newton1704}/\cite{maxwell1865} fallaban a nivel atómico.
 
   \item Describir el efecto fotoeléctrico, experimento de la lámina
-    de oro, átomo de Bohr, Sommerfeld y series de Balmer/Lyman y
+    de oro, átomo de \cite{bohr1913}, \cite{sommerfeld1916} y series de \cite{balmer1885}/\cite{lyman1906} y
     mostrar la transición del modelo de "gelatina con pasas", al
     modelo planetario cuantizado.
 
-  \item Analizar la ecuación de ondas de Schrödinger, orbitales de
+  \item Analizar la ecuación de ondas de \cite{schrodinger1926}, orbitales de
     probabilidad y números cuánticos y explicar cómo los electrones
     forman ondas estacionarias tridimensionales y sustituir las
     "órbitas" por "nubes de probabilidad".
 \end{enumerate}
 
 \chapter{Desarrollo del Trabajo}
+
 A continuación se desarrollan los cuatro bloques temáticos que
 componen el núcleo de este Trabajo, siguiendo un orden cronológico
 desde las leyes clásicas de la radiación hasta la mecánica
-ondulatoria de Schrödinger.
+ondulatoria de \cite{schrodinger1926}.
 
 \section{La radiación del cuerpo negro: de lo clásico a Planck.}
 
-\cite{planck1900} desde joven se interesó en el estudio de la termodinámica, es
+\cite{planck1900}, desde joven se interesó en el estudio de la termodinámica, es
 decir el estudio de la relación entre el calor y
 las diferentes formas de energía, este ámbito no solo tenía un enorme
 peso científico, sino que también concentraba una
@@ -178,42 +180,40 @@ enseño al mundo las primeras pistas de la física cuántica.
 de primera mano los avances del electromagnetismo y
 termodinámica, ramas de la física esenciales para sus
 descubrimientos. Profundizando la comprensión del segundo principio,
-para el desarrollo de su investigación, donde dice que “En un sistema
+para el desarrollo de su investigación, \cite{planck1900} donde dice que “En un sistema
 aislado la entropía siempre aumenta o, como mucho, permanece constante”
-términos que utilizo en sus trabajos sobre \textbf{la radiación del
-cuerpo negro} para explicar esto iniciaremos observando una chimenea,
-a medida que
-los troncos se calientan se pude observar un cambio de color a llamas
+términos que utilizo en sus trabajos sobre la radiación del
+cuerpo negro para comprender esto iniciaremos observando una chimenea,
+a medida que los troncos se calientan se pude observar un cambio de color a llamas
 más vivas, las zonas menos calientes no emiten luz visible aunque si
-nos calientan,
-la radiación la emite en radiación infrarroja que es invisible para
+nos calientan, la radiación la emite en radiación infrarroja que es invisible para
 el ojo humano, cuanto más caliente es el fuego más evoluciona su color de la
 luz emitida del rojo al azul, esto indica que cuanto más caliente
 esta un cuerpo, la luz que emite es más intensa y la longitud de onda
-es más pequeña.
+es más pequeña \cite{planck1900}.
+
 Entonces se generó un problema experimental concreto: determinar la
 distribución espectral de la radiación emitida por un cuerpo en
-equilibrio térmico,
-para mayor comprensión debemos plantearnos la siguiente pregunta ¿Qué
-es un cuerpo negro? Es un sistema ideal que debe cumplir dos características:
+equilibrio térmico, para mayor comprensión debemos plantearnos la siguiente pregunta 
+¿Qué es un cuerpo negro? Es un sistema ideal que debe cumplir dos características:
 
-\begin{enumerate}
-  \item Absorber toda la radiación incidente. (reflectiva nula)
+\begin{itemize}[nosep]
+  \item Absorber toda la radiación incidente. (reflectiva nula) \cite{planck1900}
   \item Emitir radiación con un espectro que depende únicamente de su
-    temperatura.
-\end{enumerate}
+    temperatura \cite{planck1900}.
+\end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{cavidad_aproximado_cuerpo_negro.png}
   \caption[Modelo de cavidad para aproximar a un cuerpo negro
-  ideal]{Modelo de cavidad para aproximar a un cuerpo negro ideal.
-  Fuente: \citet{planck1900}}.
+  ideal]{Modelo de cavidad para aproximar a un cuerpo negro ideal \citet{planck1900}.}
   \label{fig:espectro_cuerpo_negro}
 \end{figure}
 
-La radiación proveniente de una fuente externa entra por un orificio
+La radiación procedente de una fuente externa ingresa por un orificio
 pequeño y sufre múltiples reflexiones en el interior de la cavidad.
+
 En cada reflexión, parte de la energía es absorbida por las paredes,
 de modo que la radiación incidente pierde progresivamente “memoria”
 de su dirección e intensidad inicial. Cuando el sistema alcanza
@@ -222,28 +222,20 @@ hacia el exterior, cuya distribución espectral depende principalmente
 de la temperatura de las paredes y se aproxima al espectro ideal de
 un cuerpo negro \cite{planck1900}.
 
-La magnitud fundamental que describe este fenómeno es la densidad
-\textbf{espectral de energía} por unidad de volumen:
+La magnitud fundamental que permite describir este fenómeno es la 
+densidad espectral de energía por unidad de volumen, 
+expresada por \(u(\nu,T)\). 
 
-\begin{equation}
-  u(v, T)
-  \label{eq:densidad_espectral_energia}
-\end{equation}
-donde:
-\begin{equation}
-  \begin{aligned}
-    v &= \text{frecuencia} \\
-    T &= \text{temperatura absoluta}
-  \end{aligned}
-\end{equation}
+En esta expresión, \(\nu\) representa la frecuencia de la radiación y
+\(T\) la temperatura absoluta del sistema \cite{planck1900}.
 
-Y la energía total viene dada por:
+La energía total por unidad de volumen se obtiene sumando la contribución de todas 
+las frecuencias posibles. Matemáticamente, esto se expresa mediante la 
+integral de \(u(\nu,T)\) sobre todas las frecuencias:
 
 \begin{equation}
   u(T)=\int_{0}^{\infty} u(\nu, T)\, d\nu
 \end{equation}
-
-El desafío consistía en encontrar la forma funcional correcta de \(u(\nu, T)\).
 
 El problema del cuerpo negro era matemático, físico y conceptualmente
 complicado ya que se necesitaba del electromagnetismo (ecuaciones de \cite{maxwell1865}),
@@ -282,8 +274,8 @@ la ley dice que un objeto caliente emite radiación en todas las
 longitudes de onda y que la suma total de toda esa radiación depende
 fuertemente de la temperatura \cite{stefan1879}
 
-La ley establece que la \textbf{potencia total emitida por unidad de
-área} por un cuerpo negro es:
+La ley establece que la potencia total emitida por unidad de
+área por un cuerpo negro es:
 
 \begin{equation}
   M = \sigma T^4
@@ -295,7 +287,7 @@ donde:
     M &= \text{potencia radiada por unidad de aréa (también llamada
     \textbf{exitancia radiante}) } [W\cdot m^{-2}] \\
     T &= \text{temperatura absoluta } [K] \\
-    \sigma &= \text{\textbf{constante de Stefan-Boltzmann} } [W\cdot
+    \sigma &= \text{constante de Stefan-Boltzmann } [W\cdot
     m^{-2}\cdot K^{-4}]
   \end{aligned}
 \end{equation}
@@ -306,7 +298,7 @@ constante:
 \end{equation}
 
 Los materiales reales no son cuerpos negros perfectos. Se introduce
-la \textbf{emisividad} \(\varepsilon \) (entre 0 y 1)
+la emisividad \(\varepsilon \) (entre 0 y 1)
 para modelar cuánta radiación emite una superficie comparada con el
 cuerpo negro ideal:
 
@@ -325,7 +317,7 @@ Si el área es \(A\), la potencia total emitida es:
 
 Esta ley tiene sus principales aplicaciones en la astrofísica
 (luminosidad estelar) la ingeniería térmica (perdidas radiactivas
-en hornos, turbinas, disipadores calientes), Clima y energía, su
+en hornos, turbinas, disipadores calientes), clima y energía, su
 soporte practico como teórico es compatible con la teoría
 cuántica \cite{planck1900}.
 
@@ -333,43 +325,33 @@ cuántica \cite{planck1900}.
 
 Cualquier cuerpo con temperatura mayor a cero emite radiación
 electromagnética esta emisión no ocurre en una sola magnitud de onda,
-sino cuya forma
-depende fuertemente de la temperatura, con la aparición del concepto
+sino cuya forma depende fuertemente de la temperatura, con la aparición del concepto
 de cuerpo negro \cite{wien1893} formulo una ley: a longitud de onda en la que el
-cuerpo negro
-emite con máxima intensidad se desplaza hacia longitudes de onda más
+cuerpo negro emite con máxima intensidad se desplaza hacia longitudes de onda más
 cortas a medida que aumenta la temperatura, siguiendo una relación
 inversa \cite{wien1893}.
 
-La ley se expresa como:
+La ley se expresa mediante:
 
 \begin{equation}
   \lambda_{\text{max}} T = b
 \end{equation}
 
-donde:
-\begin{equation}
-  \begin{aligned}
-    \lambda_{\text{max}} &= \text{longitud de onda en la que la
-    emisión es máxima} \\
-    T &= \text{temperatura absoluta del cuerpo} \\
-    b &= \text{constante de desplazamiento de Wien}
-  \end{aligned}
-\end{equation}
+En esta ecuación, \(\lambda_{\text{max}}\) es la longitud de onda en la que la 
+emisión alcanza su valor máximo, \(T\) es la temperatura absoluta del cuerpo y \(b\) 
+corresponde a la constante de desplazamiento de \cite{wien1893}.
 
-constante:
-\begin{equation}
-  b = 2.897771955 \times 10^{-3} \, [m \cdot K]
-\end{equation}
+El valor de esta constante es: \(b = 2.897771955 \times 10^{-3} \, [m \cdot K]\).
 
-por tanto:
+Despejando \(\lambda_{\max}\), la expresión puede escribirse también como:
+
 \begin{equation}
   \lambda_{\text{max}} = \frac{b}{T}
 \end{equation}
 
 En términos cualitativos: objetos fríos emiten principalmente en
 infrarrojo, mientras que objetos muy calientes emiten en visible o
-ultravioleta. La ley de Wien formaliza esta intuición y permite
+ultravioleta. La ley de \cite{wien1893} formaliza esta intuición y permite
 cuantificarla con una sola constante.
 
 % Figura
@@ -450,47 +432,6 @@ método ha sido fundamental en la clasificación estelar y en
 estimaciones iniciales de objetos irradiantes, También es utilizada
 en procesos industriales.
 
-\textbf{Ejercicio} (Ley de desplazamiento de \cite{wien1893}): temperatura de
-una estrella según su “color” (pico de emisión).
-
-Enunciado: una estrella presenta su maximo de emición en
-\(\lambda_{\text{max}} = 450 \, \text{nm}\) (zona azul del visible).
-Estima su temperatura superficial suponiendo que se comporta como un
-cuerpo negro.
-
-Datos: la constante de desplazamiento de Wien es \(b = 2.897771955
-\times 10^{-3}\,\mathrm{m\,K}\).
-
-\begin{equation}
-  \lambda_{\max} T = b
-  \label{eq:wien}
-\end{equation}
-
-Despejando la temperatura:
-
-\begin{equation}
-  T=\frac{b}{\lambda_{\max}}.
-  \label{eq:wien_T}
-\end{equation}
-
-Para \(\lambda_{\max}=450\,\mathrm{nm}\), se convierte a metros:
-
-\begin{equation}
-  450\,\mathrm{nm} = 450\times10^{-9}\,\mathrm{m}=4.50\times10^{-7}\,\mathrm{m}.
-  \label{eq:lambda_conversion}
-\end{equation}
-
-Sustituyendo en \eqref{eq:wien_T}:
-
-\begin{equation}
-  T=\frac{2.897771955\times10^{-3}\,\mathrm{m\,K}}{4.50\times10^{-7}\,\mathrm{m}}\approx
-  6.44\times10^{3}\,\mathrm{K}.
-  \label{eq:wien_result}
-\end{equation}
-
-Por tanto, la temperatura correspondiente es \(T \approx
-6.44\times10^{3}\,\mathrm{K}\) (aprox. \(6440\,\mathrm{K}\)).
-
 \subsection{Ley de Rayleigh-Jeans y la catástrofe ultravioleta}
 
 La ley de \cite{rayleigh1900}-\cite{jeans1905} constituye el intento clásico más influyente
@@ -500,31 +441,25 @@ histórica radica en que reproduce con éxito el comportamiento
 experimental en el régimen de longitudes de onda grandes (bajas
 frecuencias), pero falla de manera dramática en el ultravioleta
 (altas frecuencias): predice una emisión que crece sin límite a
-medida que la longitud de onda disminuye. Esta divergencia recibe el
-nombre de catástrofe ultravioleta y fue una de las motivaciones
+medida que la longitud de onda disminuye. 
+Esta divergencia recibe el nombre de catástrofe ultravioleta y fue una de las motivaciones
 directas para la introducción de la cuantización de la energía por \cite{planck1901}.
 
-Para calcular la densidad espectral de energía: forma en frecuencia y
-en longitud de onda, se identificará:
-
-\begin{equation}
-  u(\nu, T) = \text{como la densidad espectral de energía}
-\end{equation}
-
-\begin{equation}
-  u(\nu, T)d\nu = \text{como la energía por volumen contenida entre }
-  \nu \text{ y } \nu+d\nu.
-\end{equation}
+Para calcular la densidad espectral de energía, tanto en su forma en frecuencia como 
+en longitud de onda, se introduce la magnitud \(u(\nu,T)\), que representa la densidad 
+espectral de energía de la radiación térmica \cite{rayleigh1900}-\cite{jeans1905}, 
+de manera más precisa, la cantidad \(u(\nu,T)\,d\nu\) representa la energía por unidad de 
+volumen contenida en el intervalo de frecuencias comprendido entre \(\nu\) y \(\nu+d\nu\) \cite{rayleigh1900}-\cite{jeans1905}.
 
 \cite{planck1901} en su artículo escribe que un puente técnico crucial es la
 relación de energía promedio U de un oscilador de frecuencia \(\nu\)
-y la densidad de energía radiactiva u a esa frecuencia:
+y la densidad de energía radiactiva u a esa frecuencia, dicha relación puede expresarse como:
 
 \begin{equation}
   u(\nu, T) = \frac{8\pi\nu^2}{c^3} U(\nu, T)
 \end{equation}
 
-\cite{planck1901} la presenta como la Ecuación (8) en su desarrollo, combinando
+\cite{planck1901} la presenta como la ecuación en su desarrollo, combinando
 relaciones de intensidad y densidad de energía. Esta relación es
 fundamental porque conecta la descripción microscópica (osciladores
 atómicos) con la macroscópica (radiación en el espacio), y es a
@@ -547,7 +482,12 @@ $U(\nu,T)$, se obtiene la ley de \cite{rayleigh1900}-\cite{jeans1905}:
   \label{eq:rayleigh_jeans_u_nu}
 \end{equation}
 
-La “catástrofe ultravioleta” se hace visible al integrar la energía
+Esta fórmula muestra que la densidad espectral de energía aumenta proporcionalmente 
+al cuadrado de la frecuencia. Por ello, describe adecuadamente el comportamiento experimental 
+a bajas frecuencias, pero conduce a resultados físicamente inaceptables cuando la frecuencia 
+aumenta de manera indefinida \cite{rayleigh1900}-\cite{jeans1905}.
+
+La catástrofe ultravioleta se hace visible al integrar la energía
 total predicha por \cite{rayleigh1900}-\cite{jeans1905}. La energía por unidad de volumen total sería:
 
 \begin{equation}
@@ -556,7 +496,8 @@ total predicha por \cite{rayleigh1900}-\cite{jeans1905}. La energía por unidad 
   \frac{8\pi k_{B}T}{c^{3}}\int_{0}^{\infty}\nu^{2}\,d\nu
 \end{equation}
 
-pero
+Sin embargo, la integral \(\int_{0}^{\infty}\nu^{2}\,d\nu\) diverge, 
+lo que implica que la energía total predicha por la ley de \cite{rayleigh1900}-\cite{jeans1905} es infinita:
 
 \begin{equation}
   \int_{0}^{\infty}\nu^{2}\,d\nu =
